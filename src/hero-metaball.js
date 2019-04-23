@@ -123,11 +123,23 @@ export default {
 
         var metaballs = [];
 
-        for (var i = 0; i < NUM_METABALLS; i++) {
-        var radius = Math.random() * 30 + 10;
         metaballs.push({
-            x: Math.random() * (WIDTH - 2 * radius) + radius,
-            y: Math.random() * (HEIGHT - 2 * radius) + radius,
+            x: WIDTH/2,
+            y: HEIGHT/2 + 64,
+            z: 0,
+            vx: 0,
+            vy: 0,
+            r: 240
+        });
+
+        for (var i = 1; i < NUM_METABALLS; i++) {
+        var radius = Math.random() * 50 + 10;
+        var dist = Math.random() * 400 + 100;
+        var angle = Math.random() * Math.PI * 2;
+        metaballs.push({
+            x: Math.cos(angle) * dist + WIDTH/2,
+            y: Math.sin(angle) * dist + HEIGHT/2 + 100,
+            z: Math.random() * 1000,
             vx: Math.random() * 1 - 0.5,
             vy: Math.random() * 1 - 0.5,
             r: radius
@@ -153,43 +165,53 @@ export default {
          */
 
         var step = function() {
-        // Update positions and speeds
-        for (var i = 0; i < NUM_METABALLS; i++) {
-            var mb = metaballs[i];
-            
-            mb.x += mb.vx;
-            if (mb.x - mb.r < 0) {
-            mb.x = mb.r + 1;
-            mb.vx = Math.abs(mb.vx);
-            } else if (mb.x + mb.r > WIDTH) {
-            mb.x = WIDTH - mb.r;
-            mb.vx = -Math.abs(mb.vx);
-            }
-            mb.y += mb.vy;
-            if (mb.y - mb.r < 0) {
-            mb.y = mb.r + 1;
-            mb.vy = Math.abs(mb.vy);
-            } else if (mb.y + mb.r > HEIGHT) {
-            mb.y = HEIGHT - mb.r;
-            mb.vy = -Math.abs(mb.vy);
-            }
-        }
-        
-        // To send the data to the GPU, we first need to
-        // flatten our data into a single array.
-        var dataToSendToGPU = new Float32Array(3 * NUM_METABALLS);
-        for (var i = 0; i < NUM_METABALLS; i++) {
-            var baseIndex = 3 * i;
-            var mb = metaballs[i];
-            dataToSendToGPU[baseIndex + 0] = mb.x;
-            dataToSendToGPU[baseIndex + 1] = mb.y;
-            dataToSendToGPU[baseIndex + 2] = mb.r;
-        }
-        gl.uniform3fv(metaballsHandle, dataToSendToGPU);
-        //gl.clearColor(0.0,0.0,0.0,0.0);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            // Update positions and speeds
+            for (var i = 1; i < NUM_METABALLS; i++) {
+                var mb = metaballs[i];
 
-        requestAnimationFrame(step);
+                //万有引力
+                let dx = mb.x - WIDTH/2;
+                let dy = mb.y - HEIGHT*0.55;
+                let dist = Math.hypot(dx,dy);
+                let GRAVITY = 0.0001;
+                mb.vx -= dx / dist * (GRAVITY * mb.r / dist*dist);
+                mb.vy -= dy / dist * (GRAVITY * mb.r / dist*dist);
+                
+                //移動と折り返し
+                mb.x += mb.vx;
+                if (mb.x - mb.r < 24) {
+                    mb.x = mb.r + 1;
+                    mb.vx = Math.abs(mb.vx);
+                } else if (mb.x + mb.r > WIDTH - 24) {
+                    mb.x = WIDTH - mb.r;
+                    mb.vx = -Math.abs(mb.vx);
+                }
+                mb.y += mb.vy;
+                if (mb.y - mb.r < 24) {
+                    mb.y = mb.r + 1;
+                    mb.vy = Math.abs(mb.vy);
+                } else if (mb.y + mb.r > HEIGHT - 24) {
+                    mb.y = HEIGHT - mb.r;
+                    mb.vy = -Math.abs(mb.vy);
+                }
+            }
+            
+            // To send the data to the GPU, we first need to
+            // flatten our data into a single array.
+            var dataToSendToGPU = new Float32Array(3 * NUM_METABALLS);
+            for (var i = 0; i < NUM_METABALLS; i++) {
+                var baseIndex = 3 * i;
+                var mb = metaballs[i];
+                var zToDevideBy = 1.0 ;//+ mb.z * 0.004;
+                dataToSendToGPU[baseIndex + 0] = mb.x / zToDevideBy;
+                dataToSendToGPU[baseIndex + 1] = mb.y / zToDevideBy;
+                dataToSendToGPU[baseIndex + 2] = mb.r;
+            }
+            gl.uniform3fv(metaballsHandle, dataToSendToGPU);
+            //gl.clearColor(0.0,0.0,0.0,0.0);
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+            requestAnimationFrame(step);
         };
 
         step();
