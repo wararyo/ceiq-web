@@ -41,7 +41,11 @@ export default {
             canvasStyle: {'transform':''},
             gridStyle: {'transform':''},
             relativeMousePos: [0,0],
-            smoothRelativeMousePos: [0,0]
+            smoothRelativeMousePos: [0,0],
+            time: 0,//fps測定に使用
+            frame: 0,//fpsを下げるために使用
+            isPerformanceMode: false,//trueで非力なPC用のモード
+            defaultDeviceOrientation: undefined
         }
     },
     methods: {
@@ -52,8 +56,20 @@ export default {
         onMousemove: function(e) {
             this.relativeMousePos = [e.x - (this.window.width / 2),e.y - (this.window.height / 2)];
         },
+        deviceOrientation: function(e) {
+            if(this.defaultDeviceOrientation === void 0) this.defaultDeviceOrientation = e;
+            this.relativeMousePos = [(e.beta - this.defaultDeviceOrientation.beta)*10,(e.gamma - this.defaultDeviceOrientation.gamma)*10];
+        },
         //視差効果
         update: function () {
+            if(new Date().getTime() - this.time > 1000) this.isPerformanceMode = true;
+            this.time = new Date().getTime();
+            //カクツキが起きたらFPSを下げる
+            this.frame++;
+            if(this.frame % 2 == 0 && this.isPerformanceMode) {
+                return;
+            }
+
             this.smoothRelativeMousePos[0] = this.relativeMousePos[0] * 0.1 + this.smoothRelativeMousePos[0] * 0.9;
             this.smoothRelativeMousePos[1] = this.relativeMousePos[1] * 0.1 + this.smoothRelativeMousePos[1] * 0.9;
             let x = this.smoothRelativeMousePos[0];
@@ -80,7 +96,9 @@ export default {
     },
     mounted() {
         window.addEventListener('resize',this.handleResize);
+        window.addEventListener('deviceorientation', this.deviceOrientation);
         Metaball.init();
+        this.time = new Date().getTime();
         this.update();
     },
     beforeDestroy() {
