@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="hero-background">
-
+            <canvas id="hero-metaball" :width="window.width" :height="window.height" />
         </div>
         <div class="hero-heading">
             <navigation />
@@ -24,11 +24,30 @@
 <script>
 import Navigation from '@/components/Navigation.vue';
 import Share from '@/components/Share.vue';
+import Metaball from '../hero-metaball.js';
 
 export default {
     components: {
         Navigation,
         Share
+    },
+    data: function() {
+        return {
+            window: {width:window.innerWidth, height:window.innerHeight}
+        }
+    },
+    methods: {
+        handleResize: function() {
+            this.window.width = window.innerWidth;
+            this.window.height = window.innerHeight;
+        }
+    },
+    mounted() {
+        window.addEventListener('resize',this.handleResize);
+        Metaball.init();
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.handleResize);
     }
 }
 
@@ -73,7 +92,7 @@ function AJAX_JSON_Req( url )
 
 <style lang="scss" scoped>
 header {
-    height: calc(100vh - 24px);
+    min-height: calc(100vh - 24px);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -90,6 +109,11 @@ header {
         background: linear-gradient(122deg,#f5f0b1 0%, #f5bfc6 50%, #c5eeef 100%);
         background-attachment: fixed;
         animation: fade-in 1s ease 2s 1 normal both running;
+        overflow: hidden;
+        canvas {
+            position:absolute;
+            opacity: 0.1;
+        }
     }
     .hero-heading {
         align-self: stretch;
