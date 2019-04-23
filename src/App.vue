@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <hero />
+    <about />
   </div>
 </template>
 
 <script>
 import Hero from './layout/Hero.vue'
+import About from './layout/About.vue'
 import 'ress'
 
 export default {
   name: 'app',
   components: {
-    Hero
+    Hero,
+    About
   }
 }
 </script>
