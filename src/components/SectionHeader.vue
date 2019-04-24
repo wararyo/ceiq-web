@@ -6,17 +6,8 @@
 </template>
 
 <script>
-var WebFont = require("webfontloader");
 export default {
     props: ['title', 'subtitle', 'isSmall'],
-    mounted() {
-        let config = {
-            typekit: {
-                id: 'gvr6tqd'
-            }
-        };
-        WebFont.load(config);
-    }
 }
 </script>
 
@@ -30,10 +21,13 @@ export default {
         white-space: nowrap;
     }
     .sectionheader-main {
-        margin: 0 24px -0.25em;
+        margin: 0 24px -0.12em;
         line-height: 1em;
+        vertical-align: bottom;
         font-size: 4rem;
-        font-family: co-headline, sans-serif;
+        font-family: menco, sens-serif;
+        font-style: italic;
+        font-weight: 700;
         color: #444;
     }
     .sectionheader-sub {

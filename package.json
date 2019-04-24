@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "ress": "^1.2.2",
+    "sweet-scroll": "^4.0.0",
     "vue": "^2.6.10",
     "webfontloader": "^1.6.28"
   },

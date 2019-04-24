@@ -83,7 +83,7 @@ export default {
             let rotation = [-y,x,0,Math.hypot(x,y) * 0.1];
             let translate = [x,y];
 
-            this.iconStyle.transform = toTransformString(rotation,translate,0.04,0.04);
+            this.iconStyle.transform = toTransformString(rotation,translate,0.02,0.04);
             let t1 = toTransformString(rotation,translate,0.02,0.02)
             this.descriptionStyle.transform = t1;
             this.headingStyle.transform = t1;
@@ -141,7 +141,6 @@ function handle_AJAX_Complete() {
         var el = document.querySelector("svg[id^=svg]");
         var container = document.querySelector("#hero-svg-logo");
         container.appendChild(el);
-        
     }
 }
 
@@ -197,8 +196,8 @@ header {
         align-self: stretch;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 36px;
+        align-items: stretch;
+        padding: 24px 48px 8px;
         animation: fade-in 1s ease 1.8s 1 normal both running;
     }
     h1 {

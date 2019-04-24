@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <sticky />
     <hero />
     <about />
     <lecturers />
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import Sticky from './layout/Sticky.vue'
 import Hero from './layout/Hero.vue'
 import About from './layout/About.vue'
 import Lecturers from './layout/Lecturers.vue'
@@ -22,10 +24,13 @@ import Sponsors from './layout/Sponsors.vue'
 import Access from './layout/Access.vue'
 import Contact from './layout/Contact.vue'
 import 'ress'
+var WebFont = require("webfontloader");
+import SweetScroll from "sweet-scroll"
 
 export default {
   name: 'app',
   components: {
+    Sticky,
     Hero,
     About,
     Lecturers,
@@ -33,6 +38,19 @@ export default {
     Sponsors,
     Access,
     Contact
+  },
+  mounted() {
+    let config = {
+        typekit: {
+            id: 'gvr6tqd'
+        }
+    };
+    WebFont.load(config);
+    const sweetScroll = new SweetScroll({
+  			trigger: "a[href^='#']",
+  			offset: false ? -280 : -80,
+  			duration: 500
+		});
   }
 }
 </script>

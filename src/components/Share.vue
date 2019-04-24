@@ -20,13 +20,22 @@
 <style lang="scss" scoped>
 .share {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     list-style-type: none;
     li {
-        margin: 0 16px;
-    }
-    a {
-        color: #555;
+        a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 12px;
+            color: #555;
+        }
+        &:first-child a {
+            padding-left : 6px;
+        }
+        &:last-child a {
+            padding-right: 6px;
+        }
     }
 }
 </style>
