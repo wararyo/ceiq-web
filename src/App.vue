@@ -48,7 +48,7 @@ export default {
     WebFont.load(config);
     const sweetScroll = new SweetScroll({
   			trigger: "a[href^='#']",
-  			offset: false ? -280 : -80,
+  			offset: false ? -280 : -116,
   			duration: 500
 		});
   }
