@@ -2,19 +2,37 @@
   <div id="app">
     <hero />
     <about />
+    <lecturers />
+    <schedule />
+    <sponsors />
+    <access />
+    <contact />
+    <footer>
+      <p>&copy; CEiQ 2019</p>
+    </footer>
   </div>
 </template>
 
 <script>
 import Hero from './layout/Hero.vue'
 import About from './layout/About.vue'
+import Lecturers from './layout/Lecturers.vue'
+import Schedule from './layout/Schedule.vue'
+import Sponsors from './layout/Sponsors.vue'
+import Access from './layout/Access.vue'
+import Contact from './layout/Contact.vue'
 import 'ress'
 
 export default {
   name: 'app',
   components: {
     Hero,
-    About
+    About,
+    Lecturers,
+    Schedule,
+    Sponsors,
+    Access,
+    Contact
   }
 }
 </script>
@@ -37,3 +55,10 @@ svg {
   }
 }
 </style>
+
+<style lang="scss" scoped>
+footer {
+  text-align: center;
+}
+</style>
+

@@ -1,4 +1,5 @@
-export default {
+const D = {
+    isPerformanceMode: false,
     init: function() {
         var canvas = document.getElementById("hero-metaball");
         var gl = canvas.getContext('webgl');
@@ -133,9 +134,10 @@ export default {
         });
 
         for (var i = 1; i < NUM_METABALLS; i++) {
-        var radius = Math.random() * 50 + 10;
-        var dist = Math.random() * 400 + 100;
-        var angle = Math.random() * Math.PI * 2;
+            var maxRadius = Math.min(HEIGHT/8,50);
+            var radius = Math.random() * 50 + 10;
+            var dist = Math.random() * 400 + 100;
+            var angle = Math.random() * Math.PI * 2;
         metaballs.push({
             x: Math.cos(angle) * dist + WIDTH/2,
             y: Math.sin(angle) * dist + HEIGHT/2 + 100,
@@ -164,7 +166,19 @@ export default {
          * Simulation step, data transfer, and drawing
          */
 
+        let frame = 0;//パフォーマンスモード時に使用
         var step = function() {
+            if(D.isPerformanceMode) {
+                frame++;
+                if(frame % 2 == 0) {
+                    requestAnimationFrame(step);
+                    return;
+                }
+            }
+            if(document.documentElement.scrollTop > HEIGHT-24) {//見えてないときは更新も描画もしない
+                requestAnimationFrame(step);
+                return;
+            }
             // Update positions and speeds
             for (var i = 1; i < NUM_METABALLS; i++) {
                 var mb = metaballs[i];
@@ -173,7 +187,7 @@ export default {
                 let dx = mb.x - WIDTH/2;
                 let dy = mb.y - HEIGHT*0.55;
                 let dist = Math.hypot(dx,dy);
-                let GRAVITY = 0.0001;
+                let GRAVITY = D.isPerformenceMode ? 0.0002 : 0.0001;
                 mb.vx -= dx / dist * (GRAVITY * mb.r / dist*dist);
                 mb.vy -= dy / dist * (GRAVITY * mb.r / dist*dist);
                 
@@ -216,4 +230,6 @@ export default {
 
         step();
     }
-}
+};
+
+export { D as default };

@@ -43,30 +43,36 @@ export default {
             relativeMousePos: [0,0],
             smoothRelativeMousePos: [0,0],
             time: 0,//fps測定に使用
-            frame: 0,//fpsを下げるために使用
+            latestDeltaTime: 0,
             isPerformanceMode: false,//trueで非力なPC用のモード
-            defaultDeviceOrientation: undefined
         }
     },
     methods: {
-        handleResize: function() {
+        onResize: function() {
             this.window.width = window.innerWidth;
             this.window.height = window.innerHeight;
+        },
+        onScroll: function() {
+            let y = document.documentElement.scrollTop;
+            if(this.isPerformanceMode) this.$set(this.gridStyle,'background-position-y',y * 2 / 3 + "px");
+            this.canvasStyle.visibility = (y >= this.window.height - 24) ? "hidden" : "visible";
         },
         onMousemove: function(e) {
             this.relativeMousePos = [e.x - (this.window.width / 2),e.y - (this.window.height / 2)];
         },
-        deviceOrientation: function(e) {
-            if(this.defaultDeviceOrientation === void 0) this.defaultDeviceOrientation = e;
-            this.relativeMousePos = [(e.beta - this.defaultDeviceOrientation.beta)*10,(e.gamma - this.defaultDeviceOrientation.gamma)*10];
-        },
         //視差効果
         update: function () {
-            if(new Date().getTime() - this.time > 1000) this.isPerformanceMode = true;
-            this.time = new Date().getTime();
+            let newestTime = new Date().getTime();
+            if(500 > newestTime - this.time && newestTime - this.time > 100 && this.latestDeltaTime > 80) this.isPerformanceMode = true;
+            this.latestDeltaTime = newestTime - this.time;
+            this.time = newestTime;
             //カクツキが起きたらFPSを下げる
-            this.frame++;
-            if(this.frame % 2 == 0 && this.isPerformanceMode) {
+            if(this.isPerformanceMode) {
+                this.iconStyle.transform = '';
+                this.descriptionStyle.transform = '';
+                this.headingStyle.transform = '';
+                this.canvasStyle.transform = '';
+                this.gridStyle.transform = '';
                 return;
             }
 
@@ -94,15 +100,21 @@ export default {
             }
         }
     },
+    watch: {
+        isPerformanceMode: function() {
+            Metaball.isPerformanceMode = true;
+        }
+    },
     mounted() {
-        window.addEventListener('resize',this.handleResize);
-        window.addEventListener('deviceorientation', this.deviceOrientation);
+        window.addEventListener('resize', this.onResize);
+        window.addEventListener('scroll', this.onScroll);
         Metaball.init();
         this.time = new Date().getTime();
         this.update();
     },
     beforeDestroy() {
-        window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener('resize', this.onResize);
+        window.removeEventListener('scroll', this.onScroll);
     }
 }
 
@@ -110,7 +122,7 @@ export default {
 var jsonfile = "SnapSVGAnimator/logo.json",
     fps = 60,
     width = 480,
-    height = 640,
+    height = 480,
     AJAX_req;
 
 AJAX_JSON_Req(jsonfile);
@@ -165,7 +177,7 @@ header {
         right: 0;
         background: linear-gradient(122deg,#f5f0b1 0%, #f5bfc6 50%, #c5eeef 100%);
         background-attachment: fixed;
-        animation: fade-in 1s ease 2s 1 normal both running;
+        animation: fade-in 1s ease 2.2s 1 normal both running;
         overflow: hidden;
         perspective: 500px;
         canvas {
@@ -200,7 +212,7 @@ header {
         text-align: center;
         font-weight: bold;
         color: rgba(#000,.75);
-        animation: fade-in 1s ease 2.2s 1 normal both running;
+        animation: fade-in 1s ease 2.0s 1 normal both running;
         .is-big {
             font-size: 1.5em;
         }
@@ -232,16 +244,6 @@ header {
 
 <style lang="scss">
 header h1 svg {
-    animation: logo-pop 0.5s ease;
-}
-@keyframes logo-pop {
-    0% {
-        transform: scale(2);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    animation: fade-in 0.1s ease;
 }
 </style>
