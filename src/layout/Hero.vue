@@ -53,7 +53,7 @@ export default {
             this.window.height = window.innerHeight;
         },
         onScroll: function() {
-            let y = document.documentElement.scrollTop;
+            let y = window.pageYOffset;
             if(this.isPerformanceMode) this.$set(this.gridStyle,'background-position-y',y * 2 / 3 + "px");
             this.canvasStyle.visibility = (y >= this.window.height - 24) ? "hidden" : "visible";
         },
@@ -181,7 +181,7 @@ header {
         perspective: 500px;
         canvas {
             position:absolute;
-            opacity: 0.1;
+            opacity: 0.4;
         }
         .hero-grid {
             position: absolute;

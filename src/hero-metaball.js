@@ -54,7 +54,7 @@ const D = {
             }\n\
             if (v > 1.0) {\n\
                 gl_FragColor = vec4(1.0, 1.0,\n\
-                                        1.0, 0.0);\n\
+                                        1.0, 1.0);\n\
             } else {\n\
                 gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);\n\
             }\n\
@@ -175,7 +175,7 @@ const D = {
                     return;
                 }
             }
-            if(document.documentElement.scrollTop > HEIGHT-24) {//見えてないときは更新も描画もしない
+            if(window.pageYOffset > HEIGHT-24) {//見えてないときは更新も描画もしない
                 requestAnimationFrame(step);
                 return;
             }
