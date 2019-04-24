@@ -197,7 +197,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
-        padding: 24px 48px 8px;
+        padding: 24px 48px 2vh;
         animation: fade-in 1s ease 1.8s 1 normal both running;
     }
     h1 {
