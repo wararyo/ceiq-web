@@ -1,30 +1,7 @@
 <template>
     <section class="lecturers" id="lecturers">
         <section-header title="Lecturers" subtitle="講師陣" />
-        <ul>
-            <li class="lecturer">
-                <img src="@/assets/logo-text.svg" class="lecturer-image"/>
-                <div class="lecturer-inner">
-                    <h3 class="lecturer-name">江口 カン</h3>
-                    <div class="lecturer-degree">空気株式会社 取締役会長</div>
-                    <div class="lecturer-description">
-                        <p>福岡生まれ。九州芸術工科大学 画像設計学科卒業。'97年 KOO-KI 共同設立。
-                        CMなどエンターテインメント性の高い作品の演出を多く手がける。</p>
-                        <p>(KOO-KIのどなたが来るかわからないので仮で入れてます)</p>
-                    </div>
-                </div>
-            </li>
-            <li class="lecturer">
-                <img src="@/assets/logo-text.svg" class="lecturer-image"/>
-                <div class="lecturer-inner">
-                    <h3 class="lecturer-name">飼育 太郎</h3>
-                    <div class="lecturer-degree">飼育株式会社 CEO</div>
-                    <div class="lecturer-description">
-                        <p>文章</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <div class="comingsoon">Coming Soon!</div>
     </section>
 </template>
 
@@ -49,6 +26,12 @@ export default {
     }
     ul {
         list-style-type: none;
+    }
+    .comingsoon {
+        margin: 32px;
+        color: rgba(black,.2);
+        font-size: 3rem;
+        font-family: menco, sens-serif;
     }
 }
 

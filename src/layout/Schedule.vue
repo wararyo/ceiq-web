@@ -26,6 +26,7 @@
                 <h3>立食交流会</h3>
             </li>
         </ul>
+        <div class="supplement">スケジュールは変更される可能性があります。その際はTwitterやFacebookでお知らせします。</div>
     </section>
 </template>
 
@@ -44,12 +45,16 @@ export default {
     min-height: 560px;
     padding-bottom: 80px;
     text-align: center;
-    background: linear-gradient(60deg, #f5edf2 0%, #ecd5e8 100%);
+    background: linear-gradient(135deg, #f5edf2 0%, #ecd5e8 100%);
     color: #333;
 
     p {
         text-align: left;
         margin: 0.5em 0;
+    }
+    .supplement {
+        color: rgba(black, .4);
+        font-size: 0.8rem;
     }
 }
 
