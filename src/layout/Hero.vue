@@ -206,11 +206,11 @@ header {
     }
     h1 {
         position: relative;
-        transform: translateX(-16vw);
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
+        animation: logo-move 1s ease 1.6s 1 normal both running;
     }
     .hero-description {
         margin-bottom: 5vh;
@@ -243,6 +243,14 @@ header {
     100% {
         transform: translateY(0%);
         opacity: 0;
+    }
+}
+@keyframes logo-move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-16vw);
     }
 }
 </style>
