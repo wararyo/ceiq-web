@@ -130,13 +130,13 @@ const D = {
             z: 0,
             vx: 0,
             vy: 0,
-            r: 240
+            r: 220
         });
 
         for (var i = 1; i < NUM_METABALLS; i++) {
             var maxRadius = Math.min(HEIGHT/8,50);
-            var radius = Math.random() * 50 + 10;
-            var dist = Math.random() * 400 + 100;
+            var radius = Math.random() * 36 + 10;
+            var dist = Math.random() * 320 + 100;
             var angle = Math.random() * Math.PI * 2;
         metaballs.push({
             x: Math.cos(angle) * dist + WIDTH/2,
