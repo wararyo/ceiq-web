@@ -30,13 +30,13 @@
         position: relative;
         padding: 16px 0;
         height: 100%;
-        color: #555;
+        color: #333;
         text-decoration: none;
         &:after {
             content: "";
             display: block;
             position: absolute;
-            background-color: #555;
+            background-color: #333;
             width: 0;
             bottom: calc(50% - 0.5em - 4px);
             height: 2px;

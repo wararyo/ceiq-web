@@ -28,7 +28,7 @@
             align-items: center;
             height: 100%;
             padding: 0 12px;
-            color: #555;
+            color: #333;
         }
         &:first-child a {
             padding-left : 6px;
