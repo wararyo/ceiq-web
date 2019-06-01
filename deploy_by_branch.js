@@ -12,5 +12,8 @@ if (BRANCH === "master") {
 } else if(BRANCH === "develop") {
   cmd_ftp =
   "git ftp push --syncroot dist/ --user "+config.develop.user+" --passwd "+config.develop.password+" "+config.develop.host;
+} else if(BRANCH === "vivid-design") {
+  cmd_ftp =
+  "git ftp push --syncroot dist/ --user "+config.vivid.user+" --passwd "+config.vivid.password+" "+config.vivid.host;
 }
 EXEX_SYNC(cmd_ftp);
