@@ -16,4 +16,5 @@ if (BRANCH === "master") {
   cmd_ftp =
   "git ftp push --syncroot dist/ --user "+config.vivid.user+" --passwd "+config.vivid.password+" "+config.vivid.host;
 }
+console.log(cmd_ftp);
 EXEX_SYNC(cmd_ftp);
