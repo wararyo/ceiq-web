@@ -1,6 +1,19 @@
 <template>
     <section class="lecturers" id="lecturers">
         <section-header title="Lecturers" subtitle="講師陣" />
+        <ul>
+            <li class="lecturer disabled">
+                <img src="@/assets/icon-black.svg" class="lecturer-image"/>
+                <div class="lecturer-inner">
+                    <h3 class="lecturer-name">&nbsp;</h3>
+                    <div class="lecturer-degree">&nbsp;</div>
+                    <div class="lecturer-description">
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
         <div class="comingsoon">Coming Soon!</div>
     </section>
 </template>
@@ -28,7 +41,7 @@ export default {
         list-style-type: none;
     }
     .comingsoon {
-        margin: 32px;
+        margin: 48px;
         color: rgba(black,.2);
         font-size: 3rem;
         font-family: menco, sens-serif;
@@ -50,6 +63,7 @@ export default {
     }
     .lecturer-inner {
         margin-left: 36px;
+        flex: 1;
     }
     .lecturer-name {
         margin-top: 13px;
@@ -60,6 +74,34 @@ export default {
     .lecturer-degree {
         margin-bottom: 16px;
         color: rgba(#000, .5);
+    }
+
+    &.disabled {
+        .lecturer-image {
+            background-color: #555;
+            padding: 48px;
+            opacity: .2;
+            box-shadow: none;
+        }
+        .lecturer-name {
+            display: inline-block;
+            margin-bottom: .2em;
+            min-width: 30%;
+            background-color: rgba(#555,.2);
+            border-radius: 1em;
+        }
+        .lecturer-degree {
+            display: block;
+            width: 50%;
+            background-color: rgba(#555,.1);
+            border-radius: 8px;
+        }
+        .lecturer-description p {
+            display: block;
+            width: 100%;
+            background-color: rgba(#555,.05);
+            border-radius: 8px;
+        }
     }
 }
 </style>

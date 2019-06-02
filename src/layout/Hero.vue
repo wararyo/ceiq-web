@@ -12,7 +12,7 @@
             
         </h1>
         <div class="hero-description" :style="descriptionStyle">
-            <p><span class="is-big">2019</span>年 <span class="is-big">9/22</span>(日) 13:00 -</p>
+            <p><span class="is-big">2019</span>年 <span class="is-big">秋</span></p>
             <p><span class="is-big">九州大学 大橋キャンパス</span>にて開催</p>
             <p>無料 (事前の予約が必要)</p>
         </div>
@@ -181,18 +181,18 @@ header {
         perspective: 500px;
         canvas {
             position:absolute;
-            transform: translateX(-16vw);
+            transform: translateX(-20vw);
         }
         .hero-grid {
             position: absolute;
             left: 10%;
             right: -15%;
-            top: -5%;
-            bottom: -5%;
+            top: -8%;
+            bottom: -8%;
             background: url("~@/assets/illust-white.png");
             //background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3Argba(0%2C0%2C0%2C.03)%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Egrid%3C%2Ftitle%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M55%2C1V1m1-1H54V54H0v2H56V0Z%22%2F%3E%3C%2Fsvg%3E");
             background-size: contain;
-            background-position: right center;
+            background-position: center center;
             background-repeat: no-repeat;
         }
     }
@@ -217,6 +217,9 @@ header {
         text-align: center;
         font-weight: bold;
         color: rgba(#000,.75);
+        background-color: #D9F3F4;
+        border-radius: 80px;
+        padding: 10px 64px;
         animation: fade-in 1s ease 2.0s 1 normal both running;
         .is-big {
             font-size: 1.5em;
@@ -250,7 +253,7 @@ header {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-16vw);
+        transform: translateX(-20vw);
     }
 }
 </style>
