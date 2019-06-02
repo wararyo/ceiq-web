@@ -23,7 +23,7 @@ export default {
                 l.push({
                     text: (_texts[i] === " ")?`&nbsp;`:_texts[i],
                     id: i,
-                    delay: `animation-delay: ${i*0.02}s`
+                    delay: `animation-delay: ${i*0.03 + 0.1}s`
                 });
             }
             return l;
@@ -105,11 +105,11 @@ export default {
     }
     @keyframes slide-in {
         0% {
-            transform:translateY(100%);
+            transform:translate(-10%,100%);
             opacity: 0;
         }
         100% {
-            transform:translateY(0);
+            transform:translate(0,0);
             opacity: 1;
         }
     }
