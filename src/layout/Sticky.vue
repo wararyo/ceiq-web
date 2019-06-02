@@ -45,7 +45,7 @@ nav {
     align-items: stretch;
     border-radius: 40px;
     background: linear-gradient(122deg,rgba(#f9f7e7, .9) 0%, rgba(#f9e5e9, .9) 53.1%, rgba(#e9fdfe, .9) 100%);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(4px);
     box-shadow: 0px 5px 10px rgba(112, 40, 52,.1);
     transition: top .3s, opacity .2s;
 

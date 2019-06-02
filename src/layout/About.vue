@@ -1,7 +1,10 @@
 <template>
     <section class="about" id="about">
-        <video src="" />
+        <div class="about-video-outer">
+            <video id="about-video" src="@/assets/movie.mp4" autoplay muted loop/>
+        </div>
         <div class="about-inner">
+            <div class="about-video-blur-outer"><video id="about-video-blur" src="@/assets/movie_blur.mp4" autoplay muted loop/></div>
             <section-header title="What is CEiQ?" subtitle="CEiQってなんですか？" isSmall="true" />
             <p>CEiQとは、九州のクリエイターや、クリエイター志望の学生のための交流イベントです。</p>
             <p>
@@ -29,16 +32,42 @@ export default {
 .about {
     min-height: 560px;
     display: flex;
-    video {
-        width: calc(50% - 116px);
-        background-color: #000;
-    }
+    overflow: hidden;
     .about-inner {
+        position: relative;
         flex: 1;
         text-align: center;
+        overflow: hidden;
         p {
             text-align: left;
             margin: 0.5em 48px;
+        }
+        .about-video-blur-outer {
+            position: absolute;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200%;
+            height: 200%;
+            left: -50%;
+            top: -50%;
+            background-color: #000;
+            video {
+                height: 100%;
+            }
+        }
+    }
+    .about-video-outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: calc(50% - 116px);
+        background-color: #000;
+        box-shadow: 2px 0px 10px rgba(0,0,0,.3);
+        video {
+            height: 100%;
         }
     }
 }
