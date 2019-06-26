@@ -54,7 +54,7 @@ export default {
         },
         onScroll: function() {
             let y = window.pageYOffset;
-            if(this.isPerformanceMode) this.$set(this.gridStyle,'background-position-y',y * 2 / 3 + "px");
+            if(this.isPerformanceMode) this.$set(this.gridStyle,'background-position-y',-(this.window.height*0.15) - y * 2 / 3 + "px");
             this.canvasStyle.visibility = (y >= this.window.height - 24) ? "hidden" : "visible";
         },
         onMousemove: function(e) {
@@ -175,7 +175,7 @@ header {
         left: 0;
         right: 0;
         background: #6AD1D4;
-        background-attachment: fixed;
+        //background-attachment: fixed;
         animation: fade-in 1s ease 2.2s 1 normal both running;
         overflow: hidden;
         perspective: 500px;
@@ -186,13 +186,14 @@ header {
         .hero-grid {
             position: absolute;
             left: 10%;
-            right: -15%;
-            top: -8%;
-            bottom: -8%;
+            right: -20%;
+            top: -16%;
+            bottom: -16%;
             background: url("~@/assets/illust-white.png");
             //background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3Argba(0%2C0%2C0%2C.03)%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Egrid%3C%2Ftitle%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M55%2C1V1m1-1H54V54H0v2H56V0Z%22%2F%3E%3C%2Fsvg%3E");
-            background-size: contain;
-            background-position: center center;
+            background-size: 120vh;
+            background-position: 110% -15vh;
+            background-attachment: fixed;
             background-repeat: no-repeat;
         }
     }
