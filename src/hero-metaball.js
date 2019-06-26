@@ -193,21 +193,21 @@ const D = {
                 
                 //移動と折り返し
                 mb.x += mb.vx;
-                if (mb.x - mb.r < 24) {
+                /*if (mb.x - mb.r < 24) {
                     mb.x = mb.r + 1;
                     mb.vx = Math.abs(mb.vx);
                 } else if (mb.x + mb.r > WIDTH - 24) {
                     mb.x = WIDTH - mb.r;
                     mb.vx = -Math.abs(mb.vx);
-                }
+                }*/
                 mb.y += mb.vy;
-                if (mb.y - mb.r < 24) {
+                /*if (mb.y - mb.r < 24) {
                     mb.y = mb.r + 1;
                     mb.vy = Math.abs(mb.vy);
                 } else if (mb.y + mb.r > HEIGHT - 24) {
                     mb.y = HEIGHT - mb.r;
                     mb.vy = -Math.abs(mb.vy);
-                }
+                }*/
             }
             
             // To send the data to the GPU, we first need to

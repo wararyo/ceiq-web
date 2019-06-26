@@ -164,6 +164,7 @@ header {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    background-color: white;
     box-shadow: 0px 3px 6px rgba(112, 40, 52, 0.2);
     perspective: 500px;
     perspective-origin: 50vw 50vh;
@@ -185,11 +186,13 @@ header {
         }
         .hero-grid {
             position: absolute;
+            z-index: 1;
             left: 10%;
             right: -20%;
             top: -16%;
             bottom: -16%;
-            background: url("~@/assets/illust-white.png");
+            background: url("~@/assets/illust-blue.png");
+            mix-blend-mode: normal;
             //background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3Argba(0%2C0%2C0%2C.03)%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Egrid%3C%2Ftitle%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M55%2C1V1m1-1H54V54H0v2H56V0Z%22%2F%3E%3C%2Fsvg%3E");
             background-size: 120vh;
             background-position: 110% -15vh;
