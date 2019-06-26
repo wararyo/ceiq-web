@@ -1,7 +1,10 @@
 <template>
     <section class="sponsors" id="sponsors">
         <section-header title="Sponsors" subtitle="スポンサー" />
-        <div class="comingsoon">Coming Soon!</div>
+        <div>
+            <img class="" src="@/assets/kooki.svg" width="297" alt="空気株式会社">
+        </div>
+        <div class="comingsoon">And so on...</div>
     </section>
 </template>
 
@@ -25,9 +28,9 @@ export default {
         margin: 0.5em 48px;
     }
     .comingsoon {
-        margin-top: 32px;
+        margin-top: 36px;
         color: rgba(black,.2);
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-family: menco, sens-serif;
     }
 }

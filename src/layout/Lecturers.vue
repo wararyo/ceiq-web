@@ -2,19 +2,22 @@
     <section class="lecturers" id="lecturers">
         <section-header title="Lecturers" subtitle="講師陣" />
         <ul>
-            <li class="lecturer disabled">
-                <img src="@/assets/icon-black.svg" class="lecturer-image"/>
+            <li class="lecturer">
+                <img src="@/assets/kooki-shirakawa.jpg" class="lecturer-image"/>
                 <div class="lecturer-inner">
-                    <h3 class="lecturer-name">&nbsp;</h3>
-                    <div class="lecturer-degree">&nbsp;</div>
+                    <h3 class="lecturer-name">白川 東一</h3>
+                    <div class="lecturer-degree">空気株式会社 ディレクター</div>
                     <div class="lecturer-description">
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
+                        <p>’74年大阪生まれ。</p>
+                        <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
+                        <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
+                        <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
+                        <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
                     </div>
                 </div>
             </li>
         </ul>
-        <div class="comingsoon">Coming Soon!</div>
+        <div class="comingsoon">And so on...</div>
     </section>
 </template>
 
@@ -30,6 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .lecturers {
+    margin-top: 24px;
     padding-bottom: 80px;
     text-align: center;
     background: linear-gradient(60deg,#f5f5ed 0%, #e9e7d9 100%);
@@ -56,7 +60,7 @@ export default {
     text-align: left;
     .lecturer-image {
         width: 180px;
-        height: 240px;
+        height: 180px;
         background-color: #EEE;
         border-radius: 24px;
         box-shadow: 0 3px 6px rgba(0,0,0,.1);
