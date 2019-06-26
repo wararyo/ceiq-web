@@ -1,10 +1,8 @@
 <template>
-    <section class="about" id="about">
+    <section class="about" :style="style" id="about">
         <div class="about-video-outer">
-            <video id="about-video" src="@/assets/movie.mp4" autoplay muted loop/>
         </div>
         <div class="about-inner">
-            <div class="about-video-blur-outer"><video id="about-video-blur" src="@/assets/movie_blur.mp4" autoplay muted loop/></div>
             <section-header title="What is CEiQ?" subtitle="CEiQってなんですか？" isSmall="true" />
             <p>CEiQとは、九州のクリエイターや、<br>クリエイター志望の学生のための交流イベントです。</p>
             <p>
@@ -27,6 +25,23 @@ import SectionHeader from "@/components/SectionHeader.vue";
 export default {
     components: {
         SectionHeader
+    },
+    data: function() {
+        return {
+            style: {}
+        }
+    },
+    methods: {
+        onScroll: function() {
+            let y = window.pageYOffset;
+            this.$set(this.style,'background-position-y',- y * 1 / 3 + "px");
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.onScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.onScroll);
     }
 }
 </script>
@@ -37,11 +52,18 @@ export default {
     min-height: 560px;
     display: flex;
     overflow: hidden;
+    background: url("~@/assets/illust-gray.png") white;
+    background-size: 80%;
+    background-position: calc(-100% - 15vw) 80%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: 0 3px 6px rgba(black,.2);
     .about-inner {
         position: relative;
         flex: 1;
         text-align: center;
         overflow: hidden;
+        background: linear-gradient(90deg,rgba(white,0) 0%,rgba(white,.8) 10%);//rgba(white,.8);
         p {
             text-align: left;
             margin: 0.5em 64px;
@@ -68,8 +90,6 @@ export default {
         align-items: center;
         overflow: hidden;
         width: calc(50% - 116px);
-        background-color: #000;
-        box-shadow: 2px 0px 10px rgba(0,0,0,.3);
         video {
             height: 100%;
         }
