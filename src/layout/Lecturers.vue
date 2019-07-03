@@ -8,8 +8,18 @@
                     <h3 class="lecturer-name">白川 東一</h3>
                     <div class="lecturer-degree">空気株式会社 ディレクター</div>
                     <div class="lecturer-description">
-                        <p>’74年大阪生まれ。</p>
-                        <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
+                        <p>ゲームOPやTV-CM、番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
+                        <p>オリジナルアニメーション「ミスターシェイプ」は世界10ヶ国以上で上映され、熊本地震の復興支援プロジェクトのために制作した「最終回のうた」では宮城・仙台アニメーション2018グランプリを受賞した。</p>
+                        <p>2018年には展示「スケスケ展」を企画・演出し、現在は全国巡回展を目指している。</p>
+                    </div>
+                </div>
+            </li>
+            <li class="lecturer">
+                <img src="@/assets/helixes-shimura.jpg" class="lecturer-image"/>
+                <div class="lecturer-inner">
+                    <h3 class="lecturer-name">志村 龍之介</h3>
+                    <div class="lecturer-degree">株式会社Helixes CEO</div>
+                    <div class="lecturer-description">
                         <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
                         <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
                         <p>ゲームOP・TV-CM・番組パッケージなどのディレクションを手がけ、キャラクターを使用した映像表現を得意とする。</p>
