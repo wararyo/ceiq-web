@@ -56,7 +56,7 @@ export default {
 <style lang="scss" scoped>
 .sectionheader {
     display: inline-block;
-    margin: 100px;
+    margin: 96px 0;
     > span {
         display: block;
         font-weight: normal;

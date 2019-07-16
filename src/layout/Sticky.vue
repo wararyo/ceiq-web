@@ -62,4 +62,13 @@ nav {
         }
     }
 }
+@media screen and (max-width: 699px) {
+nav {
+    width: 80px;
+    justify-content: center;
+    .sticky-logo {
+        display: none;
+    }
+}
+}
 </style>

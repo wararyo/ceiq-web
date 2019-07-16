@@ -74,4 +74,16 @@ export default {
         font-weight: bold;
     }
 }
+
+@media screen and (max-width: 959px) {
+    .access {
+        iframe {
+            margin-bottom: 64px;
+        }
+        .access-inner {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
 </style>

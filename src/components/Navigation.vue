@@ -1,15 +1,23 @@
 <template>
-    <ul class="navigation">
+    <section class="navigation">
+    <ul>
         <li><a href="#lecturers">LECTURERS</a></li>
         <li><a href="#schedule">SCHEDULE</a></li>
         <li><a href="#sponsors">SPONSOR</a></li>
         <li><a href="#access">ACCESS</a></li>
         <li><a href="#contact">CONTACT</a></li>
     </ul>
+    <div class="navigation-mobile">
+        <p>≡</p>
+    </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
 .navigation {
+    display:flex;
+    align-items: center;
+    ul {
     display: flex;
     align-items: stretch;
     list-style-type: none;
@@ -50,5 +58,17 @@
             }
         }
     }
+    }
+}
+.navigation-mobile {
+    display: none;
+}
+@media screen and (max-width: 699px) {
+.navigation ul {
+    display: none;
+}
+.navigation-mobile {
+    display: block;
+}
 }
 </style>

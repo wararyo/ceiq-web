@@ -206,7 +206,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
-        padding: 24px 48px 2vh;
+        margin: 24px 48px 2vh;
         animation: fade-in 1s ease 1.8s 1 normal both running;
 
         .navigation {
@@ -292,6 +292,30 @@ header {
     100% {
         background-position-y: 100%;
     }
+}
+
+@media screen and (max-width: 959px) {
+   header {
+       .hero-background {
+           canvas {
+            transform: none;
+           }
+           .hero-grid {
+               left: 0;
+           }
+       }
+        h1 {
+            animation: none;
+            transform: none;
+        }
+        .hero-heading {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .hero-reserve {
+            margin: auto;
+        }
+   }
 }
 </style>
 

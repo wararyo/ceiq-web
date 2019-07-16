@@ -19,6 +19,7 @@
 
 <style lang="scss" scoped>
 .share {
+    margin: 8px;
     display: flex;
     align-items: stretch;
     list-style-type: none;

@@ -52,6 +52,7 @@ export default {
     min-height: 560px;
     display: flex;
     margin-bottom: 24px;
+    padding-bottom: 64px;
     overflow: hidden;
     background: url("~@/assets/illust-gray.png") white;
     background-size: 80%;
@@ -93,6 +94,15 @@ export default {
         width: calc(50% - 116px);
         video {
             height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .about {
+        .about-video-outer {
+            position: absolute;
+            width: 100%;
         }
     }
 }
