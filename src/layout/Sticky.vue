@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         onScroll: function() {
-            this.isHidden = (window.pageYOffset < window.innerHeight);            
+            this.isHidden = (window.pageYOffset < window.innerHeight*1.2);            
         }
     },
     mounted() {
