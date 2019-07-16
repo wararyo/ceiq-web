@@ -67,9 +67,11 @@ export default {
         line-height: 1em;
         vertical-align: bottom;
         font-size: 4rem;
-        font-family: menco, sens-serif;
-        font-style: italic;
-        font-weight: 700;
+        font-family: moon, sens-serif;
+        //font-style: italic;
+        letter-spacing: -0.025em;
+        font-weight: bold;
+
         color: #444;
         overflow: hidden;
         > span {
@@ -105,7 +107,7 @@ export default {
     }
     @keyframes slide-in {
         0% {
-            transform:translate(-10%,100%);
+            transform:translate(0,100%);
             opacity: 0;
         }
         100% {
@@ -113,6 +115,11 @@ export default {
             opacity: 1;
         }
     }
+}
+
+@font-face {
+  font-family: 'moon';
+  src: url('~@/assets/fonts/moon-bold.otf') format('opentype'), url('~@/assets/fonts/moon-bold.woff') format('woff'), url('~@/assets/fonts/moon-bold.woff2') format('woff2');
 }
 </style>
 
