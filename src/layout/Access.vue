@@ -7,10 +7,10 @@
                 <div class="access-venue">九州大学 大橋キャンパス</div>
                 <div class="access-address">〒815-8540　福岡市南区塩原4-9-1<br>西鉄大橋駅より徒歩5分</div>
                 <ul>
-                    <li>空路 福岡空港→(地下鉄空港線)→「天神駅」→「西鉄福岡駅」→(西鉄天神大牟田線)→「西鉄大橋駅」</li>
-                    <li>空路 福岡空港→(地下鉄空港線)→「天神駅」→「西鉄福岡駅」→(西鉄天神大牟田線)→「西鉄大橋駅」</li>
-                    <li>空路 福岡空港→(地下鉄空港線)→「天神駅」→「西鉄福岡駅」→(西鉄天神大牟田線)→「西鉄大橋駅」</li>
-                    <li>空路 福岡空港→(地下鉄空港線)→「天神駅」→「西鉄福岡駅」→(西鉄天神大牟田線)→「西鉄大橋駅」</li>
+                    <li><span class="access-heading">空路</span><br>福岡空港→(地下鉄空港線)→「天神駅」→「西鉄福岡駅」→(西鉄天神大牟田線)→「西鉄大橋駅」</li>
+                    <li><span class="access-heading">JR</span><br>「JR博多駅」→(地下鉄空港線)→「天神駅」→「西鉄福岡駅」→(西鉄天神大牟田線)→「西鉄大橋駅」
+</li>
+                    <li><span class="access-heading">西鉄</span><br>「西鉄福岡駅」→(西鉄天神大牟田線)→「西鉄大橋駅」</li>
                 </ul>
             </div>
         </div>
@@ -29,10 +29,12 @@ export default {
 
 <style lang="scss" scoped>
 .access {
+    margin: 24px auto;
     padding-bottom: 80px;
     min-height: 560px;
     text-align: center;
     background: linear-gradient(60deg,#f5f5ed 0%, #e9e7d9 100%);
+    box-shadow: 0 3px 6px rgba(black,.2);
     p {
         text-align: left;
         margin: 0.5em 48px;
@@ -55,6 +57,7 @@ export default {
         padding-left: 2em;
         text-align: left;
         font-size: 0.9rem;
+        list-style-type: none;
         li {
             margin: 1em;
         }
@@ -66,6 +69,9 @@ export default {
     }
     .access-address {
         color: rgba(black,.5);
+    }
+    .access-heading {
+        font-weight: bold;
     }
 }
 </style>

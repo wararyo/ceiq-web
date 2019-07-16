@@ -20,9 +20,11 @@ export default {
 
 <style lang="scss" scoped>
 .sponsors {
+    margin: 24px auto;
     min-height: 560px;
     text-align: center;
     background: linear-gradient(135deg, #e6f7fd 0%, #c6d3df 100%);
+    box-shadow: 0 3px 6px rgba(black,.2);
     p {
         text-align: left;
         margin: 0.5em 48px;

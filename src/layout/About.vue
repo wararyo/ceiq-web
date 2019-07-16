@@ -51,6 +51,7 @@ export default {
 .about {
     min-height: 560px;
     display: flex;
+    margin-bottom: 24px;
     overflow: hidden;
     background: url("~@/assets/illust-gray.png") white;
     background-size: 80%;

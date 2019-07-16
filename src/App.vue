@@ -81,6 +81,7 @@ footer {
   padding: 48px 16px;
   background: linear-gradient(122deg,#f5f0b1 0%, #f5bfc6 50%, #c5eeef 100%);
   text-align: center;
+  position: relative;
   .footer-icon {
     width: 64px;
     margin: 16px 0 24px;

@@ -46,7 +46,8 @@ export default {
     margin-top: 24px;
     padding-bottom: 80px;
     text-align: center;
-    background: linear-gradient(60deg,#f5f5ed 0%, #e9e7d9 100%);
+    background: linear-gradient(60deg,#fdfdf9 0%, #f0eee5 100%);
+    box-shadow: 0 3px 6px rgba(black,.2);
     p {
         text-align: left;
         margin: 0.5em 0;

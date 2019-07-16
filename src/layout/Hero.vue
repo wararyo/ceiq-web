@@ -158,7 +158,7 @@ function AJAX_JSON_Req( url )
 
 <style lang="scss" scoped>
 header {
-    min-height: calc(100vh);
+    min-height: calc(100vh - 8px);
     width: 100%;
     display: flex;
     flex-direction: column;

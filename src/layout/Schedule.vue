@@ -9,20 +9,56 @@
             <li class="is-lecture is-line">
                 <time>13:30</time>
                 <div>
-                    <h3>講義その1 / 飼育 太郎</h3>
-                    <p>講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説</p>
-                    <p>講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説講義の解説</p>
+                    <h3>講演その1</h3>
+                    <p>詳細は後日掲載します。</p>
                 </div>
             </li>
             <li class="is-break is-line">
                 <span>休憩 10分</span>
             </li>
+            <li class="is-lecture is-line">
+                <time>14:10</time>
+                <div>
+                    <h3>講演その2</h3>
+                    <p>詳細は後日掲載します。</p>
+                </div>
+            </li>
+            <li class="is-break is-line">
+                <span>休憩 10分</span>
+            </li>
+            <li class="is-lecture is-line">
+                <time>14:50</time>
+                <div>
+                    <h3>講演その3</h3>
+                    <p>詳細は後日掲載します。</p>
+                </div>
+            </li>
+            <li class="is-break is-line">
+                <span>休憩 30分</span>
+            </li>
+            <li class="is-lecture is-line">
+                <time>15:50</time>
+                <div>
+                    <h3>LT会</h3>
+                    <p>今の思いを語りたい若者たち5人が、10分間のライトニングトークを行います。</p>
+                </div>
+            </li>
+            <li class="is-break is-line">
+                <span>休憩 10分</span>
+            </li>
+            <li class="is-lecture is-line">
+                <time>16:30</time>
+                <div>
+                    <h3>講演その4</h3>
+                    <p>詳細は後日掲載します。</p>
+                </div>
+            </li>
             <li class="is-whole">
-                <time>19:40</time>
+                <time>17:00</time>
                 <h3>閉会式</h3>
             </li>
             <li class="is-special">
-                <time>20:00</time>
+                <time>18:30</time>
                 <h3>立食交流会</h3>
             </li>
         </ul>
@@ -42,11 +78,13 @@ export default {
 
 <style lang="scss" scoped>
 .schedule {
+    margin: 24px auto;
     min-height: 560px;
     padding-bottom: 80px;
     text-align: center;
     background: linear-gradient(135deg, #f5edf2 0%, #ecd5e8 100%);
     color: #333;
+    box-shadow: 0 3px 6px rgba(black,.2);
 
     p {
         text-align: left;
