@@ -1,5 +1,5 @@
 <template>
-    <section class="schedule" id="schedule">
+    <section class="schedule" :style="style" id="schedule">
         <section-header title="Schedule" subtitle="イベントの日程" />
         <ul class="events">
             <li class="is-whole is-line">
@@ -71,6 +71,23 @@ import SectionHeader from "@/components/SectionHeader.vue";
 export default {
     components: {
         SectionHeader
+    },
+    data: function() {
+        return {
+            style: {}
+        }
+    },
+    methods: {
+        onScroll: function() {
+            let y = this.$el.getBoundingClientRect().top;
+            this.$set(this.style,'background-position-y',y * 1 / 3 - 200 + "px, 0");
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.onScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.onScroll);
     }
 }
 </script>
@@ -82,7 +99,12 @@ export default {
     min-height: 560px;
     padding-bottom: 80px;
     text-align: center;
-    background: linear-gradient(135deg, #f5edf2 0%, #ecd5e8 100%);
+    background: url("~@/assets/illust-gray.png"), linear-gradient(135deg, #f5edf2 0%, #ecd5e8 100%);
+    background-size: 150%, 100%;
+    background-position: center 80%, 0 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed, scroll;
+    background-blend-mode: overlay;
     color: #333;
     box-shadow: 0 3px 6px rgba(black,.2);
 

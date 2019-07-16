@@ -1,5 +1,5 @@
 <template>
-    <section class="lecturers" id="lecturers">
+    <section class="lecturers" :style="style" id="lecturers">
         <section-header title="Lecturers" subtitle="講師陣" />
         <ul>
             <li class="lecturer">
@@ -36,6 +36,23 @@ import SectionHeader from "@/components/SectionHeader.vue";
 export default {
     components: {
         SectionHeader
+    },
+    data: function() {
+        return {
+            style: {}
+        }
+    },
+    methods: {
+        onScroll: function() {
+            let y = this.$el.getBoundingClientRect().top;
+            this.$set(this.style,'background-position-y',y * 1 / 3 - 400 + "px, 0");
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.onScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.onScroll);
     }
 }
 </script>
@@ -46,8 +63,13 @@ export default {
     margin-top: 24px;
     padding-bottom: 80px;
     text-align: center;
-    background: linear-gradient(60deg,#fdfdf9 0%, #f0eee5 100%);
+    background: url("~@/assets/illust-gray.png"), linear-gradient(60deg,#fdfdf9 0%, #e9e6da 100%);
+    background-size: 150%, 100%;
+    background-position: calc(-100% + 5vw) 80%, 0 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed, scroll;
     box-shadow: 0 3px 6px rgba(black,.2);
+    background-blend-mode: hard-light, normal;
     p {
         text-align: left;
         margin: 0.5em 0;
