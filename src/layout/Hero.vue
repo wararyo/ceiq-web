@@ -6,6 +6,7 @@
         </div>
         <div class="hero-heading" :style="headingStyle">
             <navigation />
+            <a href="#" class="hero-reserve">予約する</a>
             <share />
         </div>
         <h1 id="hero-svg-logo" :style="iconStyle" >
@@ -207,6 +208,30 @@ header {
         align-items: stretch;
         padding: 24px 48px 2vh;
         animation: fade-in 1s ease 1.8s 1 normal both running;
+
+        .navigation {
+            flex: 1;
+        }
+    }
+    .hero-reserve {
+        padding: 0 1em;
+        margin: auto 16px;
+        color: white;
+        background: linear-gradient(90deg, #f1e55b 0%,#e95d6f 50%,#6bc5c9 100%);
+        background-size: 200%;
+        background-position: 100%;
+        border-radius: 24px;
+        height: 48px;
+        line-height: 48px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(black,.2);
+        animation: reserve-background 10s ease alternate infinite running;
+        transition: .1s;
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(black,.2);
+        }
     }
     h1 {
         position: relative;
@@ -258,6 +283,14 @@ header {
     }
     100% {
         transform: translateX(-20vw);
+    }
+}
+@keyframes reserve-background {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-y: 100%;
     }
 }
 </style>
