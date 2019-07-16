@@ -122,45 +122,51 @@ const D = {
          * Simulation setup
          */
 
-        var metaballs = [];
+        var metaballs;
+        var metaballsHandle;
 
-        metaballs.push({
-            x: WIDTH/2,
-            y: HEIGHT/2 + 64,
-            z: 0,
-            vx: 0,
-            vy: 0,
-            r: 220
-        });
+        var setup = function() {
+            metaballs = [];
 
-        for (var i = 1; i < NUM_METABALLS; i++) {
-            var maxRadius = Math.min(HEIGHT/8,50);
-            var radius = Math.random() * 36 + 10;
-            var dist = Math.random() * 320 + 100;
-            var angle = Math.random() * Math.PI * 2;
-        metaballs.push({
-            x: Math.cos(angle) * dist + WIDTH/2,
-            y: Math.sin(angle) * dist + HEIGHT/2 + 100,
-            z: Math.random() * 1000,
-            vx: Math.random() * 1 - 0.5,
-            vy: Math.random() * 1 - 0.5,
-            r: radius
-        });
-        }
+            metaballs.push({
+                x: WIDTH/2,
+                y: HEIGHT/2 + 64,
+                z: 0,
+                vx: 0,
+                vy: 0,
+                r: 220
+            });
 
-        /**
-         * Uniform setup
-         */
-
-        // Utility to complain loudly if we fail to find the uniform
-        function getUniformLocation(program, name) {
-            var uniformLocation = gl.getUniformLocation(program, name);
-            if (uniformLocation === -1) {
-                throw 'Can not find uniform ' + name + '.';
+            for (var i = 1; i < NUM_METABALLS; i++) {
+                var maxRadius = Math.min(HEIGHT/8,50);
+                var radius = Math.random() * 36 + 10;
+                var dist = Math.random() * 320 + 100;
+                var angle = Math.random() * Math.PI * 2;
+            metaballs.push({
+                x: Math.cos(angle) * dist + WIDTH/2,
+                y: Math.sin(angle) * dist + HEIGHT/2 + 100,
+                z: Math.random() * 1000,
+                vx: Math.random() * 1 - 0.5,
+                vy: Math.random() * 1 - 0.5,
+                r: radius
+            });
             }
-            return uniformLocation;
-        }
-        var metaballsHandle = getUniformLocation(program, 'metaballs');
+
+            /**
+             * Uniform setup
+             */
+
+            // Utility to complain loudly if we fail to find the uniform
+            function getUniformLocation(program, name) {
+                var uniformLocation = gl.getUniformLocation(program, name);
+                if (uniformLocation === -1) {
+                    throw 'Can not find uniform ' + name + '.';
+                }
+                return uniformLocation;
+            }
+            metaballsHandle = getUniformLocation(program, 'metaballs');
+
+        };
 
         /**
          * Simulation step, data transfer, and drawing
@@ -228,6 +234,20 @@ const D = {
             requestAnimationFrame(step);
         };
 
+        var resizeTimer = 0;
+        window.addEventListener('resize', function(){
+            if (resizeTimer > 0) {
+                clearTimeout(resizeTimer);
+              }
+             
+            resizeTimer = setTimeout(function(){
+                if(WIDTH != window.innerHeight) {
+                    WIDTH = window.innerWidth;
+                    setup();
+                }
+            }, 200);
+        });
+        setup();
         step();
     }
 };
