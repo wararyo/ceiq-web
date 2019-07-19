@@ -108,14 +108,14 @@ export default {
     },
     mounted() {
         window.addEventListener('resize', this.onResize);
-        window.addEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.addEventListener('scroll', this.onScroll);
         Metaball.init();
         this.time = new Date().getTime();
         this.update();
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize);
-        window.removeEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.removeEventListener('scroll', this.onScroll);
     }
 }
 
@@ -317,6 +317,20 @@ header {
         }
    }
 }
+@media screen and (max-width: 599px) {
+    header {
+        h1 {
+            transform: scale(0.75);
+        }
+        .hero-description {
+            font-size: 0.8rem;
+        }
+        .hero-heading {
+            margin: 16px 24px 2vh;
+        }
+    }
+}
+
 </style>
 
 <style lang="scss">

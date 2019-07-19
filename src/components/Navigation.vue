@@ -7,11 +7,27 @@
         <li><a href="#access">ACCESS</a></li>
         <li><a href="#contact">CONTACT</a></li>
     </ul>
-    <div class="navigation-mobile">
-        <p>≡</p>
+    <div class="navigation-mobile" v-on:click="$emit('toggleMobileMenu')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><defs></defs><title>hamburger</title><rect x="14" y="14" width="20" height="2"/><rect class="cls-1" x="14" y="32" width="20" height="2"/><rect class="cls-1" x="14" y="23" width="20" height="2"/></svg>
     </div>
     </section>
 </template>
+
+<script>
+export default {
+    methods: {
+        toggleMenu: function() {
+            this.$menuIsOpen = !this.$menuIsOpen;
+        }
+    },
+    watch: {
+        $menuIsOpen: function() {
+            console.log(this.$menuIsOpen);
+        }
+    }
+}
+</script>
+
 
 <style lang="scss" scoped>
 .navigation {
@@ -62,10 +78,22 @@
 }
 .navigation-mobile {
     display: none;
+    color: black;
+    height: 48px;
 }
 @media screen and (max-width: 699px) {
 .navigation ul {
     display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(100vw - 48px);
+    transform: translate(-50%,-50%);
+    background-color: white;
+
+    /*&.is-shown {
+        display: block;
+    }*/
 }
 .navigation-mobile {
     display: block;

@@ -38,10 +38,10 @@ export default {
         }
     },
     mounted() {
-        window.addEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.addEventListener('scroll', this.onScroll);
     },
     beforeDestroy() {
-        window.removeEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.removeEventListener('scroll', this.onScroll);
     }
 }
 </script>
@@ -52,7 +52,6 @@ export default {
     min-height: 560px;
     display: flex;
     margin-bottom: 24px;
-    padding-bottom: 64px;
     overflow: hidden;
     background: url("~@/assets/illust-gray.png") white;
     background-size: 80%;
@@ -61,6 +60,7 @@ export default {
     background-attachment: fixed;
     box-shadow: 0 3px 6px rgba(black,.2);
     .about-inner {
+        padding-bottom: 64px;
         position: relative;
         flex: 1;
         text-align: center;
@@ -100,6 +100,11 @@ export default {
 
 @media screen and (max-width: 699px) {
     .about {
+        background-size: 144vh;
+        background-position: right 80%;
+        .about-inner {
+            background: linear-gradient(90deg,rgba(white,.3) 0%,rgba(white,.8) 20%,rgba(white,.8) 80%,rgba(white,.3) 100%);
+        }
         .about-video-outer {
             position: absolute;
             width: 100%;

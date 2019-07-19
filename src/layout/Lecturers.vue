@@ -49,10 +49,10 @@ export default {
         }
     },
     mounted() {
-        window.addEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.addEventListener('scroll', this.onScroll);
     },
     beforeDestroy() {
-        window.removeEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.removeEventListener('scroll', this.onScroll);
     }
 }
 </script>
@@ -82,12 +82,14 @@ export default {
         color: rgba(black,.2);
         font-size: 3rem;
         font-family: menco, sens-serif;
+        font-style: italic;
+        font-weight: 700;
     }
 }
 
 .lecturer {
     max-width: 996px;
-    width: calc(100% - 32px);
+    width: calc(100% - 48px);
     margin: 24px auto;
     display: flex;
     text-align: left;
@@ -139,6 +141,14 @@ export default {
             background-color: rgba(#555,.05);
             border-radius: 8px;
         }
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .lecturer {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 48px;
     }
 }
 </style>

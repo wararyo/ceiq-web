@@ -121,6 +121,14 @@ export default {
   font-family: 'moon';
   src: url('~@/assets/fonts/moon-bold.otf') format('opentype'), url('~@/assets/fonts/moon-bold.woff') format('woff'), url('~@/assets/fonts/moon-bold.woff2') format('woff2');
 }
+
+@media screen and (max-width: 599px) {
+    .sectionheader {
+        .sectionheader-main {
+            font-size: 3.6rem;
+        }
+    }
+}
 </style>
 
 

@@ -22,6 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 a {
+    padding-right: 0.5em;
     color: #6e5c61;
     text-decoration: none;
     display: flex;

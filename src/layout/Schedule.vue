@@ -84,10 +84,10 @@ export default {
         }
     },
     mounted() {
-        window.addEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.addEventListener('scroll', this.onScroll);
     },
     beforeDestroy() {
-        window.removeEventListener('scroll', this.onScroll);
+        if(!this.isMobile()) window.removeEventListener('scroll', this.onScroll);
     }
 }
 </script>
@@ -193,6 +193,22 @@ export default {
     h3 {
         line-height: 1.5em;
         font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .events {
+        li {
+            > * {
+                width: calc(100% - 72px - 72px);
+            }
+            &.is-line:after, &:before { //線
+                left: 72px+36px;
+            }
+        }
+        time {
+            width: 72px;
+        }
     }
 }
 </style>

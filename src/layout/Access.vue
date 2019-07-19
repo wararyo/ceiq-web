@@ -41,6 +41,7 @@ export default {
     }
     iframe {
         box-shadow: 0 2px 4px rgba(black,.16);
+        max-width: calc(100% - 24px);
     }
     .access-inner {
         max-width: 1200px;
@@ -83,6 +84,7 @@ export default {
         .access-inner {
             flex-direction: column;
             align-items: center;
+            padding-left: 0;
         }
     }
 }

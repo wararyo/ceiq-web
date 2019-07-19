@@ -5,8 +5,8 @@ const D = {
         var gl = canvas.getContext('webgl');
 
         var NUM_METABALLS = 24;
-        var WIDTH = window.innerWidth;//canvas.width;
-        var HEIGHT = window.innerHeight;//canvas.height;
+        var WIDTH = window.innerWidth;
+        var HEIGHT = window.innerHeight;
 
         /**
          * Shaders
@@ -128,19 +128,21 @@ const D = {
         var setup = function() {
             metaballs = [];
 
+            var scaleFactor = Math.max(Math.min(WIDTH / 800,1),0.65);
+
             metaballs.push({
                 x: WIDTH/2,
                 y: HEIGHT/2 + 64,
                 z: 0,
                 vx: 0,
                 vy: 0,
-                r: 220
+                r: 220 * scaleFactor
             });
 
             for (var i = 1; i < NUM_METABALLS; i++) {
                 var maxRadius = Math.min(HEIGHT/8,50);
-                var radius = Math.random() * 36 + 10;
-                var dist = Math.random() * 320 + 100;
+                var radius = (Math.random() * 36 + 10) * scaleFactor;
+                var dist = (Math.random() * 320 + 100) * scaleFactor;
                 var angle = Math.random() * Math.PI * 2;
             metaballs.push({
                 x: Math.cos(angle) * dist + WIDTH/2,
@@ -241,8 +243,9 @@ const D = {
               }
              
             resizeTimer = setTimeout(function(){
-                if(WIDTH != window.innerHeight) {
+                if(WIDTH !== window.innerWidth) {
                     WIDTH = window.innerWidth;
+                    HEIGHT = window.innerHeight;
                     setup();
                 }
             }, 200);

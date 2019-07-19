@@ -34,6 +34,8 @@ export default {
         color: rgba(black,.2);
         font-size: 2.5rem;
         font-family: menco, sens-serif;
+        font-style: italic;
+        font-weight: 700;
     }
 }
 </style>
