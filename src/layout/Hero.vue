@@ -13,9 +13,9 @@
             
         </h1>
         <div class="hero-description" :style="descriptionStyle">
-            <p><span class="is-big">2019</span>年 <span class="is-big">秋</span></p>
+            <p><span class="is-big">2019</span>年 <span class="is-big">9/15</span>(日) 13:00 -</p>
             <p><span class="is-big">九州大学 大橋キャンパス</span>にて開催</p>
-            <p>無料 (事前の予約が必要)</p>
+            <p>500円 (事前の予約が必要)</p>
         </div>
         <a href="#about" class="arrow-down">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 56 56"><title>arrow-down</title><path d="M28,39a2.988,2.988,0,0,1-2.121-.879l-16-16a3,3,0,0,1,4.242-4.242L28,31.758,41.879,17.879a3,3,0,0,1,4.242,4.242l-16,16A2.989,2.989,0,0,1,28,39Z"/></svg>
