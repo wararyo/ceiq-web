@@ -4,17 +4,29 @@
         </div>
         <div class="about-inner">
             <section-header title="What is CEiQ?" subtitle="CEiQってなんですか？" isSmall="true" />
-            <p>CEiQとは、九州のクリエイターや、<br>クリエイター志望の学生のための交流イベントです。</p>
             <p>
-                関東や関西では日々多くのイベントが行われており、<br>
-                普段は顔を見せないクリエイター同士が交流するきっかけとなっています。
+                <span>CEiQとは、九州のクリエイターや、</span>
+                <span>クリエイター志望の学生のための</span>
+                <span>交流イベントです。</span>
             </p>
             <p>
-                九州のクリエイターにもそういった機会を与えたい！<br>
-                そんな思いのもと、CEiQは企画されました。
+                <span>関東や関西では</span>
+                <span>日々多くのイベントが行われており、</span>
+                <span>普段は顔を見せないクリエイター同士が</span>
+                <span>交流するきっかけとなっています。</span>
             </p>
             <p>
-                CEiQでは、様々なジャンルのクリエイターによる講演を予定している他、夜には参加者同士の交流会も予定しています。
+                <span>九州のクリエイターにも</span>
+                <span>そういった機会を与えたい！</span><br>
+                <span>そんな思いのもと、</span>
+                <span>CEiQは企画されました。</span>
+            </p>
+            <p>
+                <span>CEiQでは、様々なジャンルの</span>
+                <span>クリエイターによる</span>
+                <span>講演を予定している他、</span>
+                <span>夜には参加者同士の</span>
+                <span>交流会も予定しています。</span>
             </p>
         </div>
     </section>
@@ -69,6 +81,10 @@ export default {
         p {
             text-align: left;
             margin: 0.5em 64px;
+
+            > span {
+                display: inline-block;
+            }
         }
         .about-video-blur-outer {
             position: absolute;
