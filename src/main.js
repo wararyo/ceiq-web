@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import ceiq from './plugin.js'
 
 Vue.config.productionTip = false;
 
@@ -18,6 +19,10 @@ Vue.prototype.isMobile = function () {
   if(ua.indexOf('Mobile') > -1 && ua.indexOf('iPad') === -1) return true;
   return false;
 };
+
+Vue.use(ceiq, {
+  store: new ceiq.Store()
+});
 
 new Vue({
   render: h => h(App),

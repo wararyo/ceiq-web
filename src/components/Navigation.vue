@@ -7,7 +7,7 @@
         <li><a href="#access">ACCESS</a></li>
         <li><a href="#contact">CONTACT</a></li>
     </ul>
-    <div class="navigation-mobile" v-on:click="$emit('toggleMobileMenu')">
+    <div class="navigation-mobile" v-on:click="toggleMenu">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><defs></defs><title>hamburger</title><rect x="14" y="14" width="20" height="2"/><rect class="cls-1" x="14" y="32" width="20" height="2"/><rect class="cls-1" x="14" y="23" width="20" height="2"/></svg>
     </div>
     </section>
@@ -17,12 +17,7 @@
 export default {
     methods: {
         toggleMenu: function() {
-            this.$menuIsOpen = !this.$menuIsOpen;
-        }
-    },
-    watch: {
-        $menuIsOpen: function() {
-            console.log(this.$menuIsOpen);
+            this.$ceiq.state.isMobileMenuOpen = !this.$ceiq.state.isMobileMenuOpen;
         }
     }
 }

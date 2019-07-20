@@ -128,7 +128,7 @@ const D = {
         var setup = function() {
             metaballs = [];
 
-            var scaleFactor = Math.max(Math.min(WIDTH / 800,1),0.65);
+            var scaleFactor = Math.max(Math.min(WIDTH / 800,1),0.68);
 
             metaballs.push({
                 x: WIDTH/2,
