@@ -9,7 +9,7 @@
             <li class="is-lecture is-line">
                 <time>13:30</time>
                 <div>
-                    <h3>講演その1</h3>
+                    <h3>ミュージックビデオの作られ方 〜Suchmosの対照的な楽曲を通して紐解く最適解〜</h3>
                     <p>詳細は後日掲載します。</p>
                 </div>
             </li>
@@ -19,7 +19,7 @@
             <li class="is-lecture is-line">
                 <time>14:10</time>
                 <div>
-                    <h3>講演その2</h3>
+                    <h3>～fortis fortuna adiuvat 運命は勇者に味方する～</h3>
                     <p>詳細は後日掲載します。</p>
                 </div>
             </li>
@@ -29,7 +29,7 @@
             <li class="is-lecture is-line">
                 <time>14:50</time>
                 <div>
-                    <h3>講演その3</h3>
+                    <h3>講演(タイトル後日公開予定)</h3>
                     <p>詳細は後日掲載します。</p>
                 </div>
             </li>
@@ -49,7 +49,7 @@
             <li class="is-lecture is-line">
                 <time>16:30</time>
                 <div>
-                    <h3>講演その4</h3>
+                    <h3>プロモーション映像の制作現場</h3>
                     <p>詳細は後日掲載します。</p>
                 </div>
             </li>

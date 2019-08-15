@@ -231,6 +231,9 @@ export default {
         flex-direction: column;
         align-items: center;
         margin-bottom: 48px;
+        .lecturer-inner {
+            margin-left: 0;
+        }
         .lecturer-organization {
             display: block;
             > div {
