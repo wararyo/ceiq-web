@@ -90,9 +90,9 @@ export default {
 }
 
 .mobile-navigation {
-  transition: all .1s ease-in-out;
+  transition: all .2s ease-in-out;
   > ul {
-    transition: all .1s ease-in-out;
+    transition: all .2s ease-in-out;
   }
 }
 .mobile-navigation-leave-active {

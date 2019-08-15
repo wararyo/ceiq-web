@@ -161,6 +161,7 @@ function AJAX_JSON_Req( url )
 header {
     min-height: calc(100vh - 8px);
     width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
