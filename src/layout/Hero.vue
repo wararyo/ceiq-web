@@ -6,7 +6,7 @@
         </div>
         <div class="hero-heading" :style="headingStyle">
             <navigation />
-            <a href="#" class="hero-reserve">予約する</a>
+            <a href="https://ceiq-event2019.peatix.com/" class="hero-reserve">予約する</a>
             <share />
         </div>
         <h1 id="hero-svg-logo" :style="iconStyle" >
@@ -232,6 +232,10 @@ header {
         &:hover {
             transform: translateY(-1px);
             box-shadow: 0 3px 6px rgba(black,.2);
+        }
+        &.disabled {
+            background: #888;
+            opacity: 0.5;
         }
     }
     h1 {
