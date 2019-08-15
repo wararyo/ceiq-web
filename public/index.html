@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- OGP -->
+    <meta property="og:title" content="CEiQ - 九州のクリエイター交流イベント" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ceiq.fun/" />
+    <meta property="og:image" content="https://ceiq.fun/ogp.jpg" />
+    <meta property="og:site_name" content="CEiQ" />
+    <meta property="og:description" content="2019年9月15日に開催予定の九州のクリエイター交流イベントの公式サイトです。" />
+    <!-- TwitterCard -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://ceiq.fun/ogp.jpg" />
+  
+    <meta name="theme-color" content="#f1e55b">
+
     <script>
     var setViewport = function() {
         var mvp = document.getElementById('vp');
@@ -22,8 +36,6 @@
     </script>
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>CEiQ - 九州のクリエイター交流イベント</title>
-    <!-- TODO: 取り除く OGP favicon -->
-    <meta name="robots" content="noindex" />
   </head>
   <body>
     <noscript>
