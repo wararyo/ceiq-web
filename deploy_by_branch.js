@@ -8,7 +8,7 @@ let cmd_ftp;
 
 if (BRANCH === "master") {
   cmd_ftp =
-  "git ftp init --syncroot dist/ --user "+config.master.user+" --passwd "+config.master.password+" "+config.master.host;
+  "git ftp push --syncroot dist/ --user "+config.master.user+" --passwd "+config.master.password+" "+config.master.host;
 } else if(BRANCH === "develop") {
   cmd_ftp =
   "git ftp push --syncroot dist/ --user "+config.develop.user+" --passwd "+config.develop.password+" "+config.develop.host;
