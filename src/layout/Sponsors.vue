@@ -32,6 +32,7 @@ export default {
     }
     .comingsoon {
         margin-top: 36px;
+        padding-bottom: 64px;
         color: rgba(black,.2);
         font-size: 2.5rem;
         font-family: menco, sens-serif;

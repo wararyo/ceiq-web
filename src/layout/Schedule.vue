@@ -33,7 +33,7 @@
                     <p>詳細は後日掲載します。</p>
                 </div>
             </li>
-            <li class="is-break is-line">
+            <li class="is-break">
                 <span>休憩 30分</span>
             </li>
             <li class="is-lecture is-line">
