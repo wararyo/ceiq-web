@@ -7,6 +7,7 @@
             <li><a href="#schedule">SCHEDULE</a></li>
             <li><a href="#sponsors">SPONSOR</a></li>
             <li><a href="#access">ACCESS</a></li>
+            <li><a href="#lightningtalk">LT会 登壇者募集</a></li>
             <li><a href="#contact">CONTACT</a></li>
             <li><div class="mobile-navigation-reserve"><a href="https://ceiq-event2019.peatix.com/">予約する</a></div></li>
             <li><share /></li>
