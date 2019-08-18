@@ -20,6 +20,10 @@
         <a href="#about" class="arrow-down">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 56 56"><title>arrow-down</title><path d="M28,39a2.988,2.988,0,0,1-2.121-.879l-16-16a3,3,0,0,1,4.242-4.242L28,31.758,41.879,17.879a3,3,0,0,1,4.242,4.242l-16,16A2.989,2.989,0,0,1,28,39Z"/></svg>
         </a>
+        <a class="hero-banner" href="#lightningtalk">
+            LT会<br>
+            登壇者募集中
+        </a>
     </header>
 </template>
 
@@ -259,6 +263,25 @@ header {
             font-size: 1.5em;
         }
     }
+    .hero-banner {
+        position: absolute;
+        right: 64px;
+        bottom: 64px;
+        display: flex;
+        width: 180px;
+        height: 180px;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: #e95d6f;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(black,.2);
+        animation: fade-in 1s ease 3.0s 1 normal both running;
+    }
     .arrow-down {
         color: rgba(#FFF, 1);
         margin: 16px;
@@ -320,7 +343,16 @@ header {
         .hero-reserve {
             margin: auto;
         }
-   }
+        .hero-banner {
+            position: static;
+            border-radius: 0;
+            height: auto;
+            width: 100%;
+            padding: 8px;
+            box-shadow: none;
+            font-size: 1rem;
+        }
+    }
 }
 @media screen and (max-width: 599px) {
     header {
