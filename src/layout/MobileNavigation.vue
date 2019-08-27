@@ -50,7 +50,7 @@ export default {
         padding: 32px 48px;
         list-style-type: none;
         font-size: 1.1em;
-        font-family: menco, sens-serif;
+        font-family: menco, 'Noto Sans CJK JP', 'Noto Sans JP', "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-style: italic;
         font-weight: 700;
         border-radius: 40px;
