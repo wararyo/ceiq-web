@@ -210,7 +210,10 @@ export default {
         line-height: 1.5em;
         font-size: 1.25rem;
         > .small {
+            display: inline-block;
+            margin-top: 0.5em;
             font-size: 1rem;
+            line-height: 1.25em;
         }
     }
     .event-lecturer {
