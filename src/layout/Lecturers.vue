@@ -2,30 +2,7 @@
     <section class="lecturers" :style="style" id="lecturers">
         <section-header title="Lecturers" subtitle="講師陣" />
         <ul>
-            <li class="lecturer">
-                <img src="@/assets/kooki-shirakawa.jpg" class="lecturer-image"/>
-                <div class="lecturer-inner">
-                    <h3 class="lecturer-name">白川 東一</h3>
-                    <div class="lecturer-degree">空気株式会社 ディレクター</div>
-                    <div class="lecturer-description">
-                        <div class="lecturer-organization">
-                            <img src="@/assets/kooki.svg" style="transform:translateX(-5%);" width="120" alt="">
-                            <div>
-                                <p>
-                                    ディレクター、アニメーター、モーショングラフィックスデザイナー、CGクリエイター、テクニカルディレクターなど、映像クリエイターが集うクリエイティブ・スタジオです。
-                                </p>
-                                <p>
-                                    CM、ゲームオープニング、Music Videoなど様々なジャンルの映像製作を手がけています。
-                                </p>
-                                <p>
-                                    「絶対にオモシロイモノしか作らない」をモットーに、映像を見る方々の心が動く物作りのために、製作からでなく企画の段階から参加するなどの取り組みも行なっています。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="lecturer">
+            <li class="lecturer" id="lecturer-shimura">
                 <div class="lecturer-images">
                     <img src="@/assets/helixes-shimura.jpg"/>
                     <img src="@/assets/helixes-yagi.jpg"/>
@@ -36,6 +13,11 @@
                     <h3 class="lecturer-name">八木 光平</h3>
                     <div class="lecturer-degree">株式会社Helixes COO</div>
                     <div class="lecturer-description">
+                        <p>
+                            <span>人気アーティストのMV制作から</span><span>舞台演出まで行うHelixesを</span>
+                            <span>創業当時から</span><span>盛り上げてきたお二人です。</span>
+                        </p>
+                        <a href="#lecture-musicvideo" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>ミュージックビデオの作られ方 〜Suchmosの対照的な楽曲を通して紐解く最適解〜</a>
                         <div class="lecturer-organization">
                             <img src="@/assets/helixes.svg" style="transform:translateX(-5%);" width="120" alt="">
                             <div>
@@ -47,12 +29,34 @@
                     </div>
                 </div>
             </li>
-            <li class="lecturer">
+            <li class="lecturer" id="lecturer-shingo">
+                <img src="@/assets/gangle-shingo.jpg" class="lecturer-image"/>
+                <div class="lecturer-inner">
+                    <h3 class="lecturer-name">新郷 佑太</h3>
+                    <div class="lecturer-degree">株式会社ジーアングル チーフエキスパート・ディレクター</div>
+                    <div class="lecturer-description">
+                        <p><span>デジタルコンテンツを</span><span>オールジャンルで手がける</span><span>G-angleにて</span>
+                        <span>映像のディレクションを</span><span>数多く手がけています。</span></p>
+                        <a href="#lecture-gangle" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>～fortis fortuna adiuvat 運命は勇者に味方する～ 一歩踏み出す勇気が会社を成長させた総合デジタルコンテンツの制作会社・株式会社ジーアングル。</a>
+                        <div class="lecturer-organization">
+                            <img src="@/assets/gangle.svg" style="transform:translateX(-5%);" width="120" alt="">
+                            <div>
+                                <p>映像・動画/3DCG・イラスト/音楽/ナレーション、様々なプロフェッショナルが集い、デジタルコンテンツをオールジャンルで手がける総合制作会社です。</p>
+                                <p>的確に消費者ニーズを捉え、インターネットとリアルの両側から、質の高いサービスを提供することに力を注いでおり、品質・価格・迅速な対応等、全てのサービスにクオリティーを追求していく「姿勢」を大事にしています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="lecturer" id="lecturer-takeshita">
                 <img src="@/assets/cc2-takeshita.jpg" class="lecturer-image"/>
                 <div class="lecturer-inner">
                     <h3 class="lecturer-name">竹下 勲</h3>
                     <div class="lecturer-degree">株式会社サイバーコネクトツー 開発部 アートマネージャー</div>
                     <div class="lecturer-description">
+                        <p><span>福岡のゲーム制作会社CC2で</span><span>リードアーティストを務め、</span>
+                        <span>ゲーム制作にて</span><span>映像演出チームをまとめた</span><span>経験の持ち主です。</span></p>
+                        <a href="#lecture-cinematics" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>ゲームシネマティクス(リアルタイムデモ) 制作事例</a>
                         <div class="lecturer-organization">
                             <img src="@/assets/cc2.jpg" width="120" alt="">
                             <div>
@@ -70,17 +74,27 @@
                     </div>
                 </div>
             </li>
-            <li class="lecturer">
-                <img src="@/assets/gangle-shingo.jpg" class="lecturer-image"/>
+            <li class="lecturer" id="lecturer-shirakawa">
+                <img src="@/assets/kooki-shirakawa.jpg" class="lecturer-image"/>
                 <div class="lecturer-inner">
-                    <h3 class="lecturer-name">新郷 佑太</h3>
-                    <div class="lecturer-degree">株式会社ジーアングル チーフエキスパート・ディレクター</div>
+                    <h3 class="lecturer-name">白川 東一</h3>
+                    <div class="lecturer-degree">空気株式会社 ディレクター</div>
                     <div class="lecturer-description">
+                        <p><span>有名テレビCMなどの</span><span>ディレクションを手がけている他、</span>
+                        <span>自身で特別展を企画するなど</span><span>多岐にわたる</span><span>活動を行っています。</span></p>
+                        <a href="#lecture-promotionmovie" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>プロモーション映像の制作現場</a>
                         <div class="lecturer-organization">
-                            <img src="@/assets/gangle.svg" style="transform:translateX(-5%);" width="120" alt="">
+                            <img src="@/assets/kooki.svg" style="transform:translateX(-5%);" width="120" alt="">
                             <div>
-                                <p>映像・動画/3DCG・イラスト/音楽/ナレーション、様々なプロフェッショナルが集い、デジタルコンテンツをオールジャンルで手がける総合制作会社です。</p>
-                                <p>的確に消費者ニーズを捉え、インターネットとリアルの両側から、質の高いサービスを提供することに力を注いでおり、品質・価格・迅速な対応等、全てのサービスにクオリティーを追求していく「姿勢」を大事にしています。</p>
+                                <p>
+                                    ディレクター、アニメーター、モーショングラフィックスデザイナー、CGクリエイター、テクニカルディレクターなど、映像クリエイターが集うクリエイティブ・スタジオです。
+                                </p>
+                                <p>
+                                    CM、ゲームオープニング、Music Videoなど様々なジャンルの映像製作を手がけています。
+                                </p>
+                                <p>
+                                    「絶対にオモシロイモノしか作らない」をモットーに、映像を見る方々の心が動く物作りのために、製作からでなく企画の段階から参加するなどの取り組みも行なっています。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +164,7 @@ export default {
 .lecturer {
     max-width: 996px;
     width: calc(100% - 48px);
-    margin: 24px auto;
+    margin: 48px auto;
     display: flex;
     align-items: flex-start;
     text-align: left;
@@ -171,9 +185,11 @@ export default {
     .lecturer-inner {
         margin-left: 36px;
         flex: 1;
+        overflow: hidden;
+        width: 100%;
     }
     .lecturer-name {
-        margin-top: 13px;
+        margin-top: 4px;
         font-size: 2rem;
         line-height: 1.5em;
         font-weight: bold;
@@ -182,7 +198,42 @@ export default {
         margin-bottom: 16px;
         color: rgba(#000, .5);
     }
+    .lecturer-description {
+        color: #333;
+        > p > span {
+            display: inline-block;
+        }
+    }
+    .lecturer-lecture {
+        display: block;
+        width: 100%;
+        margin: 1em 0;
+        padding-right: 1em;
+        height: 32px;
+        font-size: 1rem;
+        text-decoration: none;
+        color: #333;
+        background-color: white;
+        border-radius: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &:hover .lecturer-lecture-heading {
+            background-color: #666;
+        }
+        .lecturer-lecture-heading {
+            display: inline-block;
+            margin: 0 0.75em 0 0;
+            padding: 0 1em;
+            line-height: 32px;
+            border-radius: 16px;
+            color: #EEE;
+            background-color: #454545;
+        }
+    }
     .lecturer-organization {
+        margin-top: 1em;
         padding: 16px 24px;
         font-size: 0.8rem;
         display: flex;

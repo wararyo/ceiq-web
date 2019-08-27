@@ -6,31 +6,43 @@
                 <time>13:00</time>
                 <h3>オリエンテーション</h3>
             </li>
-            <li class="is-lecture is-line">
+            <li id="lecture-musicvideo" class="is-lecture is-line">
                 <time>13:30</time>
                 <div>
-                    <h3>ミュージックビデオの作られ方 〜Suchmosの対照的な楽曲を通して紐解く最適解〜</h3>
-                    <p>詳細は後日掲載します。</p>
+                    <h3>ミュージックビデオの作られ方<br>
+                    <span class="small">〜Suchmosの対照的な楽曲を通して紐解く最適解〜</span></h3>
+                    <a href="#lecturer-shimura" class="event-lecturer"><span class="event-lecturer-heading">講師</span>志村 龍之介, 八木 光平</a>
+                    <p>ロックバンドSuchmosのとある2つの楽曲にてミュージックビデオの制作を行なったHelixes。<br>
+                    2つはそれぞれテイストが異なり、ミュージックビデオにもその特徴が表れています。</p>
+                    <p>それらを比較する中で、プロダクションの設計に必要な考え方や、実際に働く上での重要なマインドを解説します。</p>
                 </div>
             </li>
-            <li class="is-break is-line">
+            <li id="lecture-gangle" class="is-break is-line">
                 <span>休憩 10分</span>
             </li>
             <li class="is-lecture is-line">
                 <time>14:10</time>
                 <div>
-                    <h3>～fortis fortuna adiuvat 運命は勇者に味方する～</h3>
-                    <p>詳細は後日掲載します。</p>
+                    <h3>
+                        ～fortis fortuna adiuvat 運命は勇者に味方する～<br>
+                        <span class="small">一歩踏み出す勇気が会社を成長させた総合デジタルコンテンツの制作会社・株式会社ジーアングル。</span>
+                    </h3>
+                    <a href="#lecturer-shingo" class="event-lecturer"><span class="event-lecturer-heading">講師</span>新郷 佑太</a>
+                    <p>かつては音楽の製作会社だった株式会社ジー・アングル。しかし今では映像や3DCGなども手がける総合制作会社となっています。</p>
+                    <p>なぜこのような進化を遂げることができたのか、その経緯とともにジー・アングルの持つ考え、そしてこれからの展望に触れていきます。</p>
                 </div>
             </li>
             <li class="is-break is-line">
                 <span>休憩 10分</span>
             </li>
-            <li class="is-lecture is-line">
+            <li id="lecture-cinematics" class="is-lecture is-line">
                 <time>14:50</time>
                 <div>
                     <h3>ゲームシネマティクス(リアルタイムデモ) 制作事例</h3>
-                    <p>詳細は後日掲載します。</p>
+                    <a href="#lecturer-takeshita" class="event-lecturer"><span class="event-lecturer-heading">講師</span>竹下 勲</a>
+                    <p>映像が流れるその場で描画処理が行われるゲームシネマティクスには、通常のCGムービーには見られない魅力が存在します。</p>
+                    <p>これまで数多くのゲームシネマティクス制作を手がけてきたCC2。<br>
+                    その実際の事例やワークフローを紹介しながら、リアルタイム映像の価値に触れていきます。</p>
                 </div>
             </li>
             <li class="is-break">
@@ -46,11 +58,14 @@
             <li class="is-break is-line">
                 <span>休憩 10分</span>
             </li>
-            <li class="is-lecture is-line">
+            <li id="lecture-promotionmovie" class="is-lecture is-line">
                 <time>16:30</time>
                 <div>
                     <h3>プロモーション映像の制作現場</h3>
-                    <p>詳細は後日掲載します。</p>
+                    <a href="#lecturer-shirakawa" class="event-lecturer"><span class="event-lecturer-heading">講師</span>白川 東一</a>
+                    <p>空気株式会社では日々数多くの企画/演出を行なっています。<br>
+                        これまでに受注した仕事をどのように世に送り出したか、クライアントとの交渉などリアルな体験を基にユニークな映像形式で紹介します。
+                    <p>これから映像業界を目指す学生のみなさん、必見です。</p>
                 </div>
             </li>
             <li class="is-whole">
@@ -99,7 +114,7 @@ export default {
     min-height: 560px;
     padding-bottom: 80px;
     text-align: center;
-    background: url("~@/assets/illust-gray.png"), linear-gradient(135deg, #f5edf2 0%, #ecd5e8 100%);
+    background: url("~@/assets/illust-gray.png"), linear-gradient(135deg, #f5eff3 0%, #ecdcea 100%);
     background-size: 150%, 100%;
     background-position: center 80%, 0 0;
     background-repeat: no-repeat;
@@ -109,6 +124,7 @@ export default {
     box-shadow: 0 3px 6px rgba(black,.2);
 
     p {
+        color: #454545;
         text-align: left;
         margin: 0.5em 0;
     }
@@ -193,6 +209,27 @@ export default {
     h3 {
         line-height: 1.5em;
         font-size: 1.25rem;
+        > .small {
+            font-size: 1rem;
+        }
+    }
+    .event-lecturer {
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: #333;
+
+        &:hover .event-lecturer-heading {
+            background-color: #666;
+        }
+        .event-lecturer-heading {
+            display: inline-block;
+            margin: 12px 0.75em 8px -0.5em;
+            padding: 0 0.8em;
+            line-height: 24px;
+            border-radius: 12px;
+            color: #EEE;
+            background-color: #454545;
+        }
     }
 }
 
@@ -204,6 +241,20 @@ export default {
             }
             &.is-line:after, &:before { //線
                 left: 72px+36px;
+            }
+            &.is-lecture {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                > div:last-child {
+                    position: relative;
+                    z-index: 10;
+                    width: 100%;
+                    margin: 8px 0;
+                    padding: 16px 24px;
+                    background-color: rgba(white,.5);
+                    border-radius: 16px;
+                    backdrop-filter: blur(8px);
+                }
             }
         }
         time {
