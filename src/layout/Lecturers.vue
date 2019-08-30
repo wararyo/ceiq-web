@@ -17,7 +17,7 @@
                             <span>人気アーティストのMV制作から</span><span>舞台演出まで行うHelixesを</span>
                             <span>創業当時から</span><span>盛り上げてきたお二人です。</span>
                         </p>
-                        <a href="#lecture-musicvideo" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>ミュージックビデオの作られ方 〜Suchmosの対照的な楽曲を通して紐解く最適解〜</a>
+                        <a href="#lecture-musicvideo" class="lecturer-lecture"><span class="lecturer-lecture-content">ミュージックビデオの作られ方 〜Suchmosの対照的な楽曲を通して紐解く最適解〜</span></a>
                         <div class="lecturer-organization">
                             <img src="@/assets/helixes.svg" style="transform:translateX(-5%);" width="120" alt="">
                             <div>
@@ -37,7 +37,7 @@
                     <div class="lecturer-description">
                         <p><span>デジタルコンテンツを</span><span>オールジャンルで手がける</span><span>G-angleにて</span>
                         <span>映像のディレクションを</span><span>数多く手がけています。</span></p>
-                        <a href="#lecture-gangle" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>～fortis fortuna adiuvat 運命は勇者に味方する～ 一歩踏み出す勇気が会社を成長させた総合デジタルコンテンツの制作会社・株式会社ジーアングル。</a>
+                        <a href="#lecture-gangle" class="lecturer-lecture"><span class="lecturer-lecture-content">～fortis fortuna adiuvat 運命は勇者に味方する～ 一歩踏み出す勇気が会社を成長させた総合デジタルコンテンツの制作会社・株式会社ジーアングル。</span></a>
                         <div class="lecturer-organization">
                             <img src="@/assets/gangle.svg" style="transform:translateX(-5%);" width="120" alt="">
                             <div>
@@ -56,7 +56,7 @@
                     <div class="lecturer-description">
                         <p><span>福岡のゲーム制作会社CC2で</span><span>リードアーティストを務め、</span>
                         <span>ゲーム制作にて</span><span>映像演出チームをまとめた</span><span>経験の持ち主です。</span></p>
-                        <a href="#lecture-cinematics" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>ゲームシネマティクス(リアルタイムデモ) 制作事例</a>
+                        <a href="#lecture-cinematics" class="lecturer-lecture"><span class="lecturer-lecture-content">ゲームシネマティクス(リアルタイムデモ) 制作事例</span></a>
                         <div class="lecturer-organization">
                             <img src="@/assets/cc2.jpg" width="120" alt="">
                             <div>
@@ -82,7 +82,7 @@
                     <div class="lecturer-description">
                         <p><span>有名テレビCMなどの</span><span>ディレクションを手がけている他、</span>
                         <span>自身で特別展を企画するなど</span><span>多岐にわたる</span><span>活動を行っています。</span></p>
-                        <a href="#lecture-promotionmovie" class="lecturer-lecture"><span class="lecturer-lecture-heading">講演</span>プロモーション映像の制作現場</a>
+                        <a href="#lecture-promotionmovie" class="lecturer-lecture"><span class="lecturer-lecture-content">プロモーション映像の制作現場</span></a>
                         <div class="lecturer-organization">
                             <img src="@/assets/kooki.svg" style="transform:translateX(-5%);" width="120" alt="">
                             <div>
@@ -205,31 +205,48 @@ export default {
         }
     }
     .lecturer-lecture {
-        display: block;
+        display: flex;
+        align-items: center;
         width: 100%;
         margin: 1em 0;
         padding-right: 1em;
         height: 32px;
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-decoration: none;
         color: #333;
         background-color: white;
         border-radius: 16px;
         overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
 
         &:hover .lecturer-lecture-heading {
             background-color: #666;
         }
-        .lecturer-lecture-heading {
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Ctitle%3Earrow-down%3C%2Ftitle%3E%3Cpath%20d%3D%22M39%2C28a2.988%2C2.988%2C0%2C0%2C1-.879%2C2.121l-16%2C16a3%2C3%2C0%2C0%2C1-4.242-4.242L31.758%2C28%2C17.879%2C14.121a3%2C3%2C0%2C1%2C1%2C4.242-4.242l16%2C16A2.989%2C2.989%2C0%2C0%2C1%2C39%2C28Z%22%2F%3E%3C%2Fsvg%3E");
+            background-size: contain;
+            background-position: center;
+            opacity: 0.3;
+            animation: arrow-right 3s infinite;
+        }
+        &:before {
+            content: "講演";
             display: inline-block;
             margin: 0 0.75em 0 0;
-            padding: 0 1em;
+            padding: 0 1em 0 1.2em;
             line-height: 32px;
-            border-radius: 16px;
+            //border-radius: 16px;
             color: #EEE;
             background-color: #454545;
+        }
+        .lecturer-lecture-content {
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     }
     .lecturer-organization {
@@ -293,6 +310,25 @@ export default {
                 border: none;
             }
         }
+    }
+}
+
+@keyframes arrow-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-2px);
+    }
+    10% {
+        opacity: 0.3;
+        transform: translateX(0);
+    }
+    90% {
+        opacity: 0.3;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(2px);
     }
 }
 </style>
