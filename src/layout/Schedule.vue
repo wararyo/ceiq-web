@@ -77,6 +77,7 @@
                 <h3>立食交流会</h3>
             </li>
         </ul>
+        <div class="supplement">途中参加・退出OK</div>
         <div class="supplement">スケジュールは変更される可能性があります。その際はTwitterやFacebookでお知らせします。</div>
     </section>
 </template>
