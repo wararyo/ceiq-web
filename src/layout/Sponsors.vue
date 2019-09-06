@@ -5,7 +5,7 @@
             <img class="" src="@/assets/kooki.svg" width="297" alt="空気株式会社">
             <img class="" src="@/assets/wacom.svg" width="297" alt="株式会社ワコム">
         </div>
-        <div class="comingsoon">And so on...</div>
+        <!-- <div class="comingsoon">And so on...</!--> -->
     </section>
 </template>
 
