@@ -2,7 +2,7 @@
     <section class="schedule" :style="style" id="schedule">
         <section-header title="Schedule" subtitle="イベントの日程" />
         <ul class="events">
-            <li class="is-whole is-line">
+            <li class="is-whole">
                 <time>13:00</time>
                 <h3>オリエンテーション</h3>
             </li>
@@ -17,11 +17,11 @@
                     <p>それらを比較する中で、プロダクションの設計に必要な考え方や、実際に働く上での重要なマインドを解説します。</p>
                 </div>
             </li>
-            <li id="lecture-gangle" class="is-break is-line">
+            <li id="lecture-gangle" class="is-break">
                 <span>休憩 10分</span>
             </li>
             <li class="is-lecture is-line">
-                <time>14:10</time>
+                <time>14:20</time>
                 <div>
                     <h3>
                         ～fortis fortuna adiuvat 運命は勇者に味方する～<br>
@@ -32,11 +32,21 @@
                     <p>なぜこのような進化を遂げることができたのか、その経緯とともにジー・アングルの持つ考え、そしてこれからの展望に触れていきます。</p>
                 </div>
             </li>
-            <li class="is-break is-line">
+            <li class="is-break">
+                <span>休憩 10分</span>
+            </li>
+            <li class="is-lecture is-line">
+                <time>15:10</time>
+                <div>
+                    <h3>LT会</h3>
+                    <p>今の思いを語りたい若者たち3人が、10分間のライトニングトークを行います。</p>
+                </div>
+            </li>
+            <li class="is-break">
                 <span>休憩 10分</span>
             </li>
             <li id="lecture-cinematics" class="is-lecture is-line">
-                <time>14:50</time>
+                <time>16:20</time>
                 <div>
                     <h3>ゲームシネマティクス(リアルタイムデモ) 制作事例</h3>
                     <a href="#lecturer-takeshita" class="event-lecturer"><span class="event-lecturer-heading">講師</span>竹下 勲</a>
@@ -46,20 +56,10 @@
                 </div>
             </li>
             <li class="is-break">
-                <span>休憩 30分</span>
-            </li>
-            <li class="is-lecture is-line">
-                <time>15:50</time>
-                <div>
-                    <h3>LT会</h3>
-                    <p>今の思いを語りたい若者たち3人が、10分間のライトニングトークを行います。</p>
-                </div>
-            </li>
-            <li class="is-break is-line">
                 <span>休憩 10分</span>
             </li>
             <li id="lecture-promotionmovie" class="is-lecture is-line">
-                <time>16:30</time>
+                <time>17:00</time>
                 <div>
                     <h3>プロモーション映像の制作現場</h3>
                     <a href="#lecturer-shirakawa" class="event-lecturer"><span class="event-lecturer-heading">講師</span>白川 東一</a>
@@ -69,12 +69,12 @@
                 </div>
             </li>
             <li class="is-whole">
-                <time>17:00</time>
-                <h3>閉会式</h3>
+                <time>18:00</time>
+                <h3>閉会</h3>
             </li>
             <li class="is-special">
                 <time>18:30</time>
-                <h3>立食交流会</h3>
+                <h3>懇親会</h3>
             </li>
         </ul>
         <div class="supplement">途中参加・退出OK</div>
