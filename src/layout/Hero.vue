@@ -6,7 +6,7 @@
         </div>
         <div class="hero-heading" :style="headingStyle">
             <navigation />
-            <a href="https://ceiq-event2019.peatix.com/" class="hero-reserve">予約する</a>
+            <a href="https://ceiq-event2019.peatix.com/" class="hero-reserve disabled">予約する</a>
             <share />
         </div>
         <h1 id="hero-svg-logo" :style="iconStyle" >
@@ -15,14 +15,10 @@
         <div class="hero-description" :style="descriptionStyle">
             <p><span class="is-big">2019.9.15</span> sun 13:00 -</p>
             <p><span class="is-big">九州大学 大橋キャンパス</span>にて開催</p>
-            <p>参加費 500円</p>
+            <p><span>本イベントは終了いたしました。</span><span>たくさんのご来場ありがとうございました。</span></p>
         </div>
         <a href="#about" class="arrow-down">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 56 56"><title>arrow-down</title><path d="M28,39a2.988,2.988,0,0,1-2.121-.879l-16-16a3,3,0,0,1,4.242-4.242L28,31.758,41.879,17.879a3,3,0,0,1,4.242,4.242l-16,16A2.989,2.989,0,0,1,28,39Z"/></svg>
-        </a>
-        <a class="hero-banner" href="#lightningtalk">
-            LT会<br>
-            登壇者募集中
         </a>
     </header>
 </template>
@@ -259,6 +255,9 @@ header {
         border-radius: 80px;
         padding: 10px 64px;
         animation: fade-in 1s ease 2.0s 1 normal both running;
+        span {
+            display: inline-block;
+        }
         .is-big {
             font-size: 1.5em;
         }
